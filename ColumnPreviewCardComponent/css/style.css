@@ -1,0 +1,164 @@
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --very-light-gray : hsl(0, 0%, 95%);  /* (background, headings, buttons) */
+    --transparent-white: hsla(0, 0%, 100%, 0.75);  /* (paragraphs) */
+}
+
+* { 
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--very-light-gray);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 15px; 
+}
+
+main {
+    height: 90vh;
+    width: 65%;    
+}
+
+/* container */
+.container {
+    height: 450px;
+    width: 100%;
+    display: flex;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+
+/* Cards */
+.card {  
+    height: 100%;
+    width: 33.3%;
+    padding: 15px 40px ;
+    text-align: left; 
+}
+
+.card h1 {
+    margin-top: 75px;
+    margin-bottom: 40px;
+    color: var(--very-light-gray);
+    text-transform: uppercase;
+}
+
+.card p {
+    color: var(--transparent-white);
+    line-height: 1.5;
+}
+
+.card img {
+    display: block;
+    position: absolute;
+    float: left;
+}
+
+.card button {
+    background: var(--very-light-gray);
+    border: 2px solid var(--very-light-gray);
+    padding: 15px 25px; 
+    margin-top: 80px;
+    border-radius: 20px;
+    font-family: "Red Hat Display", sans-serif;
+    cursor: pointer;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+/* Sedans */
+.card_sedans {
+    background: var(--bright-orange);
+    border-radius: 7px 0 0 7px;
+}
+
+.card_sedans .btn_sedans {
+    color: var(--bright-orange);
+}
+
+.card .btn_sedans:hover {
+    background: transparent;
+    color: var(--very-light-gray);
+}
+
+/* Suvs */
+.card_suvs {
+    background: var(--dark-cyan);
+}
+
+.card_suvs .btn_suvs {
+    color: var(--dark-cyan);
+}
+
+.card .btn_suvs:hover {
+    background: transparent;
+    color: var(--very-light-gray);
+}
+
+/* Luxury */
+.card_luxury {
+    background: var(--very-dark-cyan);
+    border-radius: 0 7px 7px 0;
+}
+
+.card_luxury .btn_luxury {
+    color: var(--very-dark-cyan);
+} 
+
+.card .btn_luxury:hover {
+    background: transparent;
+    color: var(--very-light-gray);
+}
+
+@media (max-width: 1048px) { /* Meus responsivo não são dos melhores, ainda estou aprendendo a usar :) */
+    main {
+        height: max-content;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    } 
+    .container {
+        height: 90%;
+        width: 35%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 100%;
+    }
+    .container .card_sedans {
+        border-radius: 7px 7px 0 0;
+    }
+    .container .card_luxury {
+        border-radius: 0 0 7px 7px;
+    }
+}
+
+
+
+
+
+/* Footer */
+.attribution {
+    font-size: 16px; 
+    text-align: center;
+    color: var(--bright-orange);
+}
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+    text-decoration: none;
+    transition: 1s ease-in-out;
+}
+  
+.attribution a:hover {
+    color: var(--very-dark-cyan); 
+    text-decoration: underline;
+}
