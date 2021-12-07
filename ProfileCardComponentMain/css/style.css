@@ -18,7 +18,7 @@ body, html {
     font-size: 18px;
     font-family: "Kumbh Sans", sans-serif;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 .wrapper {
@@ -35,20 +35,16 @@ body, html {
 
 /* Background top */
 .wrapper .back-top { 
-    width: 70vw;
-    height: 70vw;
     position: absolute;
-    top: -80%;
-    left: -30%; 
+    bottom: 50%;
+    right: 50%;
 }
 
 /* Background bottom */
 .wrapper .back-bottom {
-    width: 70vw;
-    height: 70vw;
     position: absolute;
-    bottom: -80%;
-    right: -30%;
+    top: 50%;
+    left: 50%;
 } 
 
 /* Container */
@@ -105,6 +101,10 @@ body, html {
     margin-left: 5px;
 }
 
+.container .wrapper-contents header span:nth-child(3) {
+    letter-spacing: 2px;
+}
+
 /* Statistics ul */
 .container .wrapper-contents .statistics {
     width: 100%;
@@ -119,7 +119,8 @@ body, html {
 .container .wrapper-contents .statistics li > span {
     color: var(--dark-gray);
     font-weight: 400;
-    font-size: 15px;
+    font-size: 13px;
+    letter-spacing: 2px;
 }
 
 .container .wrapper-contents .statistics li:nth-child(2), li:nth-child(3) {
@@ -169,109 +170,3 @@ body, html {
     font-weight: bolder;
     color: #000; 
 }
-
-/* Responsive */
-@media (max-width: 1003px) {
-    .wrapper .back-top {
-        height: 100vw;
-        width: 100vw;
-        top: -70%;
-        left: -55%;
-    }
-    .wrapper .back-bottom {
-        height: 100vw;
-        width: 100vw;
-        right: -55%;
-        bottom: -70%;
-    }
-} 
-
-@media (max-width: 1156px) {
-    .wrapper .back-top {
-        height: 70vw;
-        width: 90vw;
-        top: -70%;
-        left: -50%;
-    }
-    .wrapper .back-bottom {
-        height: 70vw;
-        width: 90vw;
-        right: -50%;
-        bottom: -70%;
-    }
-}
-
-@media (max-width: 1028px) {
-    .wrapper .back-top {    
-        height: 80vw;
-        width: 80vw;    
-        top: -60%;
-        left: -30%;
-    }
-    .wrapper .back-bottom {
-        height: 80vw;
-        width: 80vw;
-        right: -30%;
-        bottom: -60%;
-    }
-}
-
-@media (max-width: 890px) { 
-    .wrapper .back-top {
-        height: 80vw;
-        width: 80vw;
-        top: -50%;
-        left: -40%;
-    }
-    .wrapper .back-bottom {
-        height: 80vw;
-        width: 80vw;
-        right: -40%;
-        bottom: -50%;
-    }
-}
-
-@media (max-width: 768px) {
-    .wrapper .back-top {
-        height: 100vw;
-        width: 100vw;
-        top: -70%;
-        left: -55%;
-    }
-    .wrapper .back-bottom {
-        height: 100vw;
-        width: 100vw;
-        right: -55%;
-        bottom: -70%;
-    }
-}
-
-@media (max-width: 552px) {
-    .wrapper .back-top {
-        height: 120vw;
-        width: 120vw;
-        top: -70%;
-        left: -55%;
-    }
-    .wrapper .back-bottom {
-        height: 120vw;
-        width: 120vw;
-        right: -55%;
-        bottom: -70%;
-    }
-}
-
-@media (max-width: 320px) {
-    .wrapper .back-top {
-        height: 120vw;
-        width: 120vw;
-        top: -30%;
-        left: -30%;
-    }
-    .wrapper .back-bottom {
-        height: 120vw;
-        width: 120vw;
-        right: -30%;
-        bottom: -30%;
-    }
-} 
