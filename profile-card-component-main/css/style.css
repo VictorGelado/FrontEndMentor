@@ -23,6 +23,7 @@ body, html {
 .wrapper {
     height: 100%;
     width: 100%; 
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
