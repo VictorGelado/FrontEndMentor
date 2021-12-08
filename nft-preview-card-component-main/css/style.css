@@ -1,0 +1,197 @@
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue: hsl(217, 54%, 11%);
+    --more-lees-dark-blue: hsl(216, 50%, 16%);
+    --very-clear-blue: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--very-dark-blue); 
+}
+
+/* Container */
+.wrapper .container {
+    width: 320px;
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: var(--more-lees-dark-blue);
+    border-radius: 15px;
+}
+
+/* Container wrapping */
+.container .wrapper-container {
+    width: 90%;
+    height: 95%;
+}
+
+/* Image header equilibrium */
+.container .wrapper-container .img-header {
+    width: 100%;
+    height: 55%;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.container .wrapper-container .img-header img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Background color view */
+.container .wrapper-container .img-header .view {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--cyan);
+    border-radius: 10px; 
+    opacity: 0;
+    transition: 500ms ease-in-out;
+}
+
+.container .wrapper-container .img-header:hover .view {
+    opacity: 0.4; 
+} 
+
+/* Background image view */
+.container .wrapper-container .img-header .view-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../images/icon-view.svg') no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: 500ms ease-in-out;
+}
+
+.container .wrapper-container .img-header:hover .view-image {
+    opacity: 1; 
+}    
+
+/* Information */
+.container .wrapper-container .info {
+    width: 100%;
+    height: 26%;
+    padding: 20px 0;
+    text-align: left;
+}
+
+.container .wrapper-container .info h1 {
+    font-weight: 400;
+    font-size: 1rem;
+    padding-bottom: 20px;
+    color: var(--white);
+    transition: 500ms ease-in-out;
+    cursor: pointer;
+}
+
+.container .wrapper-container .info h1:hover {
+    color: var(--cyan);
+}    
+
+.container .wrapper-container .info p {
+    font-weight: 300;
+    color: var(--soft-blue);
+    padding-bottom: 20px;
+}
+
+/* Values */
+.container .wrapper-container .values {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .wrapper-container .values span:nth-child(1) {
+    background: url('../images/icon-ethereum.svg') no-repeat;
+    background-position-y: center;
+    padding-left: 20px;
+    color: var(--cyan);
+}
+
+.container .wrapper-container .values span:nth-child(2) {
+    background: url('../images/icon-clock.svg') no-repeat;
+    background-position-y: center;
+    padding-left: 23px;
+    color: var(--soft-blue);
+}
+
+/* Footer card */
+.container .wrapper-container .footer {
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+    border-top: 1px solid var(--soft-blue);
+    position: relative;
+    font-weight: 300;
+}
+
+.container .wrapper-container .footer span:nth-child(1) {
+    padding-left: 50px;
+    color: var(--soft-blue);
+}
+
+.container .wrapper-container .footer span:nth-child(2) {
+    color: var(--white);
+    transition: 500ms ease-in-out;
+    cursor: pointer;
+}
+
+.container .wrapper-container .footer span:nth-child(2):hover {
+    color: var(--cyan);
+}
+
+.container .wrapper-container .footer img {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    border: 2px solid var(--white); 
+}
+
+
+
+/* Footer */
+.attribution {
+    position: absolute;
+    bottom: 5px;   
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    color: var(--soft-blue);
+}
+
+.attribution a {
+    color: var(--white);
+    text-decoration: none;
+    transition: 600ms all ease-in-out;
+}
+
+.attribution a:hover {
+    color: var(--cyan);
+}
