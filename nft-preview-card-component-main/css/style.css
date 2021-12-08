@@ -36,6 +36,7 @@ body {
     margin-top: 20px;
     background-color: var(--more-lees-dark-blue);
     border-radius: 15px;
+    box-shadow: 0 45px 30px 28px rgba(0, 0, 0, 0.575);
 }
 
 /* Container wrapping */
@@ -182,7 +183,7 @@ body {
     bottom: 10px;   
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1rem;
+    font-size: 0.8em;
     color: var(--soft-blue);
 }
 
