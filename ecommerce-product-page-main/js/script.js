@@ -17,6 +17,7 @@ const deleteCart = document.querySelector("#delete");
 // Images thumb.
 const containerThumb = document.querySelectorAll(".thumb");
 var src;
+let preview;
 // Carousel images.
 var srcNav;
 const carousel = document.querySelector(".carousel-images");
@@ -135,16 +136,18 @@ function indexThumb(index) {
 
 // Close and open carousel.    
 window.addEventListener('resize', () => {
-    
-    if (window.screen.width <= 320) {
-        imagePreview.removeEventListener('click');
+
+    if (window.screen.width <= 392) {
+        if (imagePreview.getAttribute('listener') == 'true') {
+            imagePreview.removeEventListener('click');
+        }    
     }
 
 });
 
 imagePreview.addEventListener('click', () => {
 
-    if (window.screen.width > 320) {
+    if (window.screen.width >= 393) {
         addClass(carousel, "active", false);
         window.scrollTo(0, 0);
     
@@ -155,7 +158,9 @@ imagePreview.addEventListener('click', () => {
         
         addClass(thumbCarousel[src-1], "active", false);
     } else {
-        imagePreview.removeEventListener('click');
+        if (imagePreview.getAttribute('listener') == 'true') {
+            imagePreview.removeEventListener('click');
+        }
     }
 
 });
@@ -209,7 +214,7 @@ function imageBack() {
         removeClass(i, "active");             
     }); 
 
-    let preview = document.querySelector("#image-carousel").getAttribute("src");
+    preview = document.querySelector("#image-carousel").getAttribute("src");
     src = Number(preview.substring(23,24));
 
     src -= 1;
@@ -228,7 +233,7 @@ function imageNext() {
         removeClass(i, "active");             
     }); 
 
-    let preview = document.querySelector("#image-carousel").getAttribute("src");
+    preview = document.querySelector("#image-carousel").getAttribute("src");
     src = Number(preview.substring(23,24));
 
     src += 1;
@@ -266,6 +271,12 @@ window.addEventListener('resize', () => {
     }
 });
 
+window.addEventListener('resize', () => {
+    if (window.screen.width < 393) {
+        removeClass(carousel, "active");
+    }
+});
+
 
 // Image preview mobile.
 
@@ -274,10 +285,33 @@ next.addEventListener('click', nextImageMobile);
 
 function previousImageMobile() {
 
+    preview = document.querySelector("#image").getAttribute("src");
+    src = Number(preview.substring(23,24));    
 
+    src -= 1;
+
+    if (src < 1) {
+        src = 4;
+    }
+
+    document.querySelector("#image").setAttribute("src", `./images/image-product-${src}.jpg`);
 
 }
 
+function nextImageMobile() {
+
+    preview = document.querySelector("#image").getAttribute("src");
+    src = Number(preview.substring(23,24));    
+
+    src += 1;
+
+    if (src > 4) {
+        src = 1;
+    }
+    
+    document.querySelector("#image").setAttribute("src", `./images/image-product-${src}.jpg`);
+
+}
 
 
 
