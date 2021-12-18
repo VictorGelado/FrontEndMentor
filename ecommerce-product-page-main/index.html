@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Frontend Mentor | E-commerce product page</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+
+            <div class="header-menu">
+                <img src="./images/icon-menu.svg" alt="Menu" class="menu-hamburger">
+                <a href="index.html"><img src="./images/logo.svg" alt="Sneakers logo"></a>
+
+                <div class="nav-menu">
+                    <ul class="menu">
+                        <li class="menu-items"><a href="#">Collections</a></li>
+                        <li class="menu-items"><a href="#">Men</a></li>
+                        <li class="menu-items"><a href="#">Women</a></li>
+                        <li class="menu-items"><a href="#">About</a></li>
+                        <li class="menu-items"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="header-perfil">
+                <img src="./images/icon-cart.svg" alt="Car" class="img-car">
+                <img src="./images/image-avatar.png" alt="image perfil" class="img-perfil">
+                <div class="number-products-cart">
+                    <p>3</p>
+                </div>
+                <div class="car-container">
+                    <div class="header-car">
+                        <h3>Cart</h3>
+                    </div>
+
+                    <div class="products-car">
+                        <p id="car-empty">Your cart is empty.</p>
+
+                        <div class="products-car-added">
+                            <div class="products-added">
+                                <img src="./images/image-product-1-thumbnail.jpg" alt="image product">
+                                <div class="added-head">
+                                    <p id="added-title">Autumn limited Edition</p>
+                                    <p id="price-products-added">$<span id="price-product-final">125.00</span> x 1
+                                        <span>$345.00</span></p>
+                                </div>
+                                <img src="./images/icon-delete.svg" alt="Delete" id="delete">
+                            </div>
+                            <button>Checkout</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <div class="product-images">
+
+                <div class="previous">            
+                    <img src="./images/icon-previous.svg" alt="Next image">
+                </div>
+                <div class="next">                    
+                    <img src="./images/icon-next.svg" alt="Previous image" >
+                </div>
+
+                <div class="image-preview">
+                    <img src="./images/image-product-1.jpg" alt="Image preview" id="image">
+                </div>
+                <div class="images-thumb">
+                    <div class="thumb active">
+                        <img src="./images/image-product-1-thumbnail.jpg" alt="Image thumbnail 1">
+                    </div>
+                    <div class="thumb">
+                        <img src="./images/image-product-2-thumbnail.jpg" alt="Image thumbnail 2">
+                    </div>
+                    <div class="thumb">
+                        <img src="./images/image-product-3-thumbnail.jpg" alt="Image thumbnail 3">
+                    </div>
+                    <div class="thumb">
+                        <img src="./images/image-product-4-thumbnail.jpg" alt="Image thumbnail 4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-content">
+                <div class="product-text">
+                    <p>Sneaker Company</p>
+
+                    <h1 id="product-title">Fall Limited Edition Sneakers</h1>
+
+                    <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber
+                        outer sole, they’ll withstand everything the weather can offer.</p>
+                </div>
+
+                <div class="product-cart">
+                    <div class="price-product">
+                        <div class="price-discount">
+                            <span id="price">$125.00</span>
+                            <span id="discount">50%</span>
+                        </div>
+                        <span id="original-price"> $250.00</span>
+                    </div>
+
+                    <div class="add-cart">
+                        <div class="add-product">
+                            <span id="add-button">1</span>
+                            <img src="./images/icon-minus.svg" alt="Decrease product" id="btn-decrease">
+                            <img src="./images/icon-plus.svg" alt="Increase product" id="btn-increase">
+                        </div>
+                        <button id="added-cart"><img src="./images/icon-cart.svg" alt="Added Cart">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="carousel-images">
+            <div class="center-wrapper">
+                <div id="close-carousel">
+                    <svg id="svg-style" width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                            fill-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="carousel-preview">
+                    <img src="./images/image-product-1.jpg" alt="Image preview" id="image-carousel">
+                </div>
+                <div class="carousel-images-thumb">
+                    <div class="carousel-thumb">
+                        <img src="./images/image-product-1-thumbnail.jpg" alt="Image thumbnail 1">
+                    </div>
+                    <div class="carousel-thumb">
+                        <img src="./images/image-product-2-thumbnail.jpg" alt="Image thumbnail 2">
+                    </div>
+                    <div class="carousel-thumb">
+                        <img src="./images/image-product-3-thumbnail.jpg" alt="Image thumbnail 3">
+                    </div>
+                    <div class="carousel-thumb">
+                        <img src="./images/image-product-4-thumbnail.jpg" alt="Image thumbnail 4">
+                    </div>
+                </div>
+                <div id="back-image">
+                    <img src="./images/icon-previous.svg" alt="Back image">
+                </div>
+                <div id="next-image">
+                    <img src="./images/icon-next.svg" alt="Next image">
+                </div>
+            </div>
+        </section>
+
+
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="https://github.com/victorgelado">Victor Manoel</a>.
+        </div>
+
+    </div>
+
+
+
+
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>
