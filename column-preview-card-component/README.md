@@ -1,6 +1,6 @@
 # Frontend Mentor - 3-column preview card component
 
-[Design preview for the 3-column preview card component coding challenge](https://victorgelado.github.io/TesteSite.github.io/)
+[Design preview for the 3-column preview card component coding challenge](./image/resolution-preview.png)
 
 ## Welcome! 👋
 
