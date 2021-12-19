@@ -13,8 +13,6 @@
     <title>Frontend Mentor | Order summary card</title>
 </head>
 <body>
-
-    <div class="background"></div>
     <div class="container">
         <img src="images/illustration-hero.svg" class="hero"/>
         <header><h1>Order Summary</h1></header>
@@ -22,12 +20,14 @@
         <p>You can now listen to millions of songs, audiobooks, and podcasts on any 
         device anywhere you like!</p>
     
-        <div class="payment">
-            <img src="images/icon-music.svg" class="music">
-            
-            <span class="plano">Annual Plan</span><br/>
-            <span class="preco">$59.99/year</span>
-
+        <div class="payment">            
+            <div class="plan-price"> 
+                <div class="img-music"><img src="images/icon-music.svg" class="music"></div>   
+                <div class="content">
+                    <span class="plano">Annual Plan</span>
+                    <span class="preco">$59.99/year</span>
+                </div>
+            </div>
             <button class="change"><a href="#">Change</a></button>
         </div>
     
