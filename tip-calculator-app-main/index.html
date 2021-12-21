@@ -9,32 +9,54 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" src="css/style.css"/>
-	
+	<link rel="stylesheet" src="css/style.css" />
+
 	<title>Frontend Mentor | Tip calculator app</title>
 </head>
 
 <body>
 
-	Bill
+	<div class="wrapper">
+		<div class="conteiner">
+			<div class="values">
+				<form>
+					<div class="bill">
+						<label for="bill-input">Bill</label>
+						<input type="text" id="bill-input">
+					</div>
 
-	Select Tip %
-	5%
-	10%
-	15%
-	25%
-	50%
-	Custom
+					<div class="percents-bill">
+						<label>Select Tip %</label>
+						
+						<div class="percents">
+							<button>5%</button>
+							<button>10%</button>
+							<button>15%</button>
+							<button>25%</button>
+							<button>50%</button>
+							<button>Custom</button>				
+						</div>
+					</div>
 
-	Number of People
+					<div class="people">
+						<label>Number of People</label>
+						<label id="final-value">0</label>
+					</div>
+				</form>
+			</div>
 
-	Tip Amount
-	/ person
+			<div class="result">
+				Tip Amount
+				/ person
 
-	Total
-	/ person
+				Total
+				/ person
+				<button>Reset</button>
+			</div>
 
-	Reset
+		</div>
+	</div>
+
 
 	<div class="attribution">
 		Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
