@@ -1,0 +1,26 @@
+:root {
+    /* Colors */
+    /* Primary */
+    --strong-cyan: hsl(172, 67%, 45%);
+    /* Neutral */
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --light-grayish-cyan: hsl(184, 14%, 56%);
+    --very-light-cyan: hsl(185, 41%, 84%);
+    --very-cyan-white: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    font-size: 24px;
+    font-family: 'Space Mono', monospace;
+}
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}

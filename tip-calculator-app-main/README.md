@@ -10,7 +10,7 @@ Thanks for checking out this front-end coding challenge.
 
 **To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
 
-## The challenge
+## The chalalenge
 
 Your challenge is to build out this tip calculator app and get it looking as close to the design as possible.
 
