@@ -11,13 +11,63 @@
     --white: hsl(0, 0%, 100%);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-size: 24px;
+    font-size: 16px;
     font-family: 'Space Mono', monospace;
 }
 
+input {
+    font-size: 24px;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: var(--very-light-cyan);
+} 
+
+
+
+.container {
+    width: 75%;
+    max-width: 925px;
+    height: 482px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--white);
+    border-radius: 20px;
+}
+
+.values {
+   height: 85%; 
+   width: 90%;
+   max-width: 382px;
+   background-color: red;
+}
+
+.result {
+    height: 90%;
+    width: 90%;
+    max-width: 415px;
+    border-radius: 15px;
+    background-color: var(--very-dark-cyan); 
+}
+
+
+
 
 .attribution { 
+    display: none;
     font-size: 11px; 
     text-align: center; 
 }
