@@ -56,7 +56,28 @@ header {
    max-height: 382px;
    width: 40%;
    max-width: 382px;
-   background-color: red;
+}
+
+/* Bill */
+.bill {
+    width: 100%;
+}
+
+.bill label {
+    display: block;
+}
+
+.bill #bill-input {
+    width: 100%;
+    padding: 5px 10px;
+    position: relative;
+    border: none;
+    border-radius: 5px;    
+    background: var(--very-cyan-white);
+    background-image: url('../images/icon-dollar.svg');
+    background-repeat: no-repeat;
+    background-position: 10px ,center;
+    text-align: right;
 }
 
 .result {
