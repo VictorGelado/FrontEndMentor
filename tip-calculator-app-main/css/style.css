@@ -30,35 +30,39 @@ input {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-direction: column;
+    gap: 4.5em;
     background-color: var(--very-light-cyan);
 } 
 
-
+header {
+    margin-top: 4.5em;
+}
 
 .container {
-    width: 75%;
+    width: 85%;
     max-width: 925px;
     height: 482px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: var(--white);
     border-radius: 20px;
 }
 
 .values {
-   height: 85%; 
-   width: 90%;
+   height: 80%; 
+   max-height: 382px;
+   width: 40%;
    max-width: 382px;
    background-color: red;
 }
 
 .result {
     height: 90%;
-    width: 90%;
-    max-width: 415px;
+    max-height: 418px;
+    width: 50%;
     border-radius: 15px;
     background-color: var(--very-dark-cyan); 
 }
