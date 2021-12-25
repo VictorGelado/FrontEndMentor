@@ -27,7 +27,10 @@
 				<form>
 					<div class="bill">
 						<label for="bill-input">Bill</label>
-						<input type="text" id="bill-input" placeholder="0" autofocus>
+						<div class="input-bill">
+							<input type="text" id="bill-input" placeholder="0" autofocus>
+							<img src="./images/icon-dollar.svg" alt="Icon dólar">
+						</div>
 					</div>
 
 					<div class="percents-bill">
@@ -39,14 +42,19 @@
 							<button class="percents-button">15%</button>
 							<button class="percents-button">25%</button>
 							<button class="percents-button">50%</button>
-							<button class="percents-button">Custom</button>				
+							<input class="custom" placeholder="Custom">				
 						</div>
 					</div>
 
 					<div class="people">
-						<label for="number-people">Number of People</label>
-						<label for="number-people">Can't be zero</label>
-						<input type="number" id="number-people" value="0" placeholder="0">
+						<div class="people-label">						
+							<label for="number-people">Number of People</label>
+							<label for="number-people">Can't be zero</label>
+						</div>						
+						<div class="input-people">							
+							<input type="text" id="number-people" placeholder="0">
+							<img src="./images/icon-person.svg" alt="Icon person">
+						</div>
 					</div>
 				</form>
 				

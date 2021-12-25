@@ -62,6 +62,7 @@ header {
 /* Bill */
 .bill {
     width: 100%;
+    margin-bottom: 2.5em;
 }
 
 .bill label {
@@ -71,31 +72,43 @@ header {
     color: var(--very-dark-cyan);
 }
 
-.bill #bill-input {
+.bill .input-bill {
+    position: relative;
+}
+
+.bill .input-bill #bill-input {
     width: 100%;
     padding: 5px 10px;
-    position: relative;
     border: none;
     border-radius: 5px;    
-    background: var(--very-cyan-white);
+    background-color: var(--very-cyan-white);
     outline-color: var(--strong-cyan);
-    color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);
     text-align: right;
     cursor: pointer;
 }
 
-.bill #bill-input:-webkit-autofill {
+.bill .input-bill img {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.bill .input-bill #bill-input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #f4fafa inset;
     -webkit-text-fill-color: var(--light-grayish-cyan) !important;
 }
 
+/* Percents */
 .percents-bill {
     width: 100%;
+    margin-bottom: 2.5em;
 }
 
 .percents-bill label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 14px;
     font-weight: 700;
     color: var(--very-dark-cyan);
 }
@@ -111,8 +124,103 @@ header {
 .percents-bill .percents .percents-button {
     width: 118px;
     height: 48px;
+    background-color: var(--very-dark-cyan);
+    border-radius: 6px;
+    border: none;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 24px;
+    cursor: pointer;
+    transition: .5s ease-out;
 }
 
+.percents-bill .percents .percents-button:hover {
+    background-color: hsla(172, 67%, 45%, 0.5);
+    color: var(--very-dark-cyan);
+}
+
+.percents-bill .percents .custom {
+    width: 118px;
+    height: 48px;
+    padding: 0 5px;
+    border-radius: 6px;
+    background-color: var(--very-cyan-white);
+    border: none;
+    outline-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* People */
+.people {
+    width: 100%;
+    position: relative;
+}
+
+.people .people-label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 14px;
+}
+
+.people .people-label label:first-child{
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--very-dark-cyan);
+}
+
+.people .people-label label:nth-child(2) {
+    display: inline-block;
+    visibility: hidden;
+    position: relative;
+    right: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #e64016;
+}
+
+.people .input-people {
+    width: 100%;
+    position: relative;
+}
+
+.people .input-people #number-people {
+    width: 100%;
+    padding: 5px 10px;
+    position: relative;
+    background-color: var(--very-cyan-white);
+    color: var(--very-dark-cyan);
+    border-radius: 5px;
+    border: none;
+    outline-color: var(--strong-cyan);
+    text-align: end;
+    cursor: pointer;
+}
+
+.people .input-people #number-people.error {
+    outline-color: #e64016;
+}
+
+.people .input-people img {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+
+
+
+
+.people .input-people #number-people:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #f4fafa inset;
+    -webkit-text-fill-color: var(--light-grayish-cyan) !important;
+}
 
 .result {
     height: 90%;
