@@ -134,7 +134,7 @@ header {
     transition: .5s ease-out;
 }
 
-.percents-bill .percents .percents-button:hover {
+.percents-bill .percents .percents-button:hover, .percents-button.active:hover {
     background-color: hsla(172, 67%, 45%, 0.5);
     color: var(--very-dark-cyan);
 }
@@ -213,10 +213,6 @@ header {
     transform: translateY(-50%);
 }
 
-
-
-
-
 .people .input-people #number-people:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #f4fafa inset;
     -webkit-text-fill-color: var(--light-grayish-cyan) !important;
@@ -226,10 +222,23 @@ header {
     height: 90%;
     max-height: 418px;
     width: 50%;
+    padding: 40px;
+    position: relative;
     border-radius: 15px;
     background-color: var(--very-dark-cyan); 
 }
 
+.result .amount {
+    margin-bottom: 3rem;
+}
+
+.result .amount h3 {
+    color: var(--white);
+}
+
+.result .total h3 {
+    color: var(--white);
+} 
 
 
 

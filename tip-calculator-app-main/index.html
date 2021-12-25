@@ -24,11 +24,11 @@
 
 		<div class="container">
 			<article class="values">
-				<form>
+				<form id="calculator">
 					<div class="bill">
 						<label for="bill-input">Bill</label>
 						<div class="input-bill">
-							<input type="text" id="bill-input" placeholder="0" autofocus>
+							<input type="text" id="bill-input" placeholder="0" autofocus required>
 							<img src="./images/icon-dollar.svg" alt="Icon dólar">
 						</div>
 					</div>
@@ -37,11 +37,11 @@
 						<label>Select Tip %</label>
 						
 						<div class="percents">
-							<button class="percents-button">5%</button>
-							<button class="percents-button">10%</button>
-							<button class="percents-button">15%</button>
-							<button class="percents-button">25%</button>
-							<button class="percents-button">50%</button>
+							<button class="percents-button" type="button">5%</button>
+							<button class="percents-button" type="button">10%</button>
+							<button class="percents-button" type="button">15%</button>
+							<button class="percents-button" type="button">25%</button>
+							<button class="percents-button" type="button">50%</button>
 							<input class="custom" placeholder="Custom">				
 						</div>
 					</div>
@@ -52,7 +52,7 @@
 							<label for="number-people">Can't be zero</label>
 						</div>						
 						<div class="input-people">							
-							<input type="text" id="number-people" placeholder="0">
+							<input type="text" id="number-people" placeholder="0" required>
 							<img src="./images/icon-person.svg" alt="Icon person">
 						</div>
 					</div>
@@ -61,13 +61,17 @@
 			</article>
 
 			<article class="result">
-				<h3>Tip Amount</h3>
-				<p>/ person</p>
+				<div class="amount">
+					<h3>Tip Amount</h3>
+					<p>/ person</p>					
+				</div>
 				
-				<h3>Total</h3>
-				<p>/ person</p>
+				<div class="total">					
+					<h3>Total</h3>
+					<p>/ person</p>
+				</div>
 				
-				<button>Reset</button>
+				<button type="reset" form="calculator">Reset</button>
 			</article>
 
 		</div>
