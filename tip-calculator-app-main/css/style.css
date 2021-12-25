@@ -2,7 +2,7 @@
     /* Colors */
     /* Primary */
     --strong-cyan: hsl(172, 67%, 45%);
-    /* Neutral */
+    /* Neutral */    
     --very-dark-cyan: hsl(183, 100%, 15%);
     --dark-grayish-cyan: hsl(186, 14%, 43%);
     --light-grayish-cyan: hsl(184, 14%, 56%);
@@ -218,6 +218,7 @@ header {
     -webkit-text-fill-color: var(--light-grayish-cyan) !important;
 }
 
+/* Results */
 .result {
     height: 90%;
     max-height: 418px;
@@ -229,19 +230,77 @@ header {
 }
 
 .result .amount {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 3rem;
 }
 
 .result .amount h3 {
+    font-size: 15px;
     color: var(--white);
 }
 
+.result .amount p {
+    color: var(--light-grayish-cyan);
+}
+
+.result .amount #result-amount {
+    color: var(--strong-cyan);
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.result .total{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
 .result .total h3 {
+    font-size: 15px;
     color: var(--white);
 } 
 
+.result .total p {
+    color: var(--light-grayish-cyan);
+}
+
+.result .total #result-total {
+    color: var(--strong-cyan);
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.result #reset-form {
+    width: 80%;
+    padding: 12px 10px;
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    background-color: var(--strong-cyan);    
+    opacity: 0.3;
+    color: var(--very-dark-cyan);
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    transform: translateX(-50%);
+    transition: .5s ease-in;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.result #reset-form:hover {
+    opacity: 1;
+}
 
 
+
+/* Footer */
 .attribution { 
     display: none;
     font-size: 11px; 

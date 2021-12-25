@@ -42,7 +42,7 @@
 							<button class="percents-button" type="button">15%</button>
 							<button class="percents-button" type="button">25%</button>
 							<button class="percents-button" type="button">50%</button>
-							<input class="custom" placeholder="Custom">				
+							<input type="text" class="custom" placeholder="Custom">				
 						</div>
 					</div>
 
@@ -62,16 +62,22 @@
 
 			<article class="result">
 				<div class="amount">
-					<h3>Tip Amount</h3>
-					<p>/ person</p>					
+					<div class="title">						
+						<h3>Tip Amount</h3>
+						<p>/ person</p>	
+					</div>
+					<label id="result-amount">$0.00</label>				
 				</div>
 				
-				<div class="total">					
-					<h3>Total</h3>
-					<p>/ person</p>
+				<div class="total">	
+					<div class="title">						
+						<h3>Total</h3>
+						<p>/ person</p>
+					</div>				
+					<label id="result-total">$0.00</label>
 				</div>
 				
-				<button type="reset" form="calculator">Reset</button>
+				<button type="reset" form="calculator" id="reset-form">Reset</button>
 			</article>
 
 		</div>
