@@ -28,7 +28,7 @@
 					<div class="bill">
 						<label for="bill-input">Bill</label>
 						<div class="input-bill">
-							<input type="text" id="bill-input" placeholder="0" autofocus required>
+							<input type="number" id="bill-input" placeholder="0" autofocus required min="1">
 							<img src="./images/icon-dollar.svg" alt="Icon dólar">
 						</div>
 					</div>
@@ -37,12 +37,12 @@
 						<label>Select Tip %</label>
 						
 						<div class="percents">
-							<button class="percents-button" type="button">5%</button>
-							<button class="percents-button" type="button">10%</button>
-							<button class="percents-button" type="button">15%</button>
-							<button class="percents-button" type="button">25%</button>
-							<button class="percents-button" type="button">50%</button>
-							<input type="text" class="custom" placeholder="Custom">				
+							<button class="percents-button" type="button" value="0.05">5%</button>
+							<button class="percents-button" type="button" value="0.1">10%</button>
+							<button class="percents-button" type="button" value="0.15">15%</button>
+							<button class="percents-button" type="button" value="0.25">25%</button>
+							<button class="percents-button" type="button" value="0.5">50%</button>
+							<input type="number" id="custom" placeholder="Custom" min="1">				
 						</div>
 					</div>
 
@@ -52,7 +52,7 @@
 							<label for="number-people">Can't be zero</label>
 						</div>						
 						<div class="input-people">							
-							<input type="text" id="number-people" placeholder="0" required>
+							<input type="number" id="number-people" placeholder="0" required min="1">
 							<img src="./images/icon-person.svg" alt="Icon person">
 						</div>
 					</div>
