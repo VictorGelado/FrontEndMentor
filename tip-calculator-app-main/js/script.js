@@ -14,54 +14,72 @@ percents.forEach((el) => {
 
     el.addEventListener('click', function (i) {
 
-        indexPercent(i.target);
+        removeClass();
+
+        el.classList.toggle('active');
 
     });
 
 });
 
 
-function amount(percent) {
 
-    var bill = Number(billInput.value);
+
+
+function amount() {
+
+    let bill = Number(billInput.value);
+
+    console.log(bill)
 
     if (!bill) {
         window.alert('Please enter some value');
         billInput.focus();
-    } else {
-        let tip = percent;
-        let fees = bill * tip;
-        let tipAmount = bill + fess;
     }
 
+    //let indexActiveTip = indexPercent();
+    //console.log(indexActiveTip)
+    let tipPercent = Number(percents[2].value);
+ 
+    let tip = tipPercent;
+    let fees = bill * tip;
+    let tipAmount = bill + fess; 
+    
 
-    /* console.log(tip) */
+    console.log(tip, fees, tipAmount) 
 
 
 
-    console.log(bill, fees, tip)
+    
 
 
 
-    console.log('bill', tipAmount)
+    //console.log('bill', tipAmount)
     //console.log('percent',percent)
 
 
-    document.querySelector("#result-amount").innerHTML = fees.toFixed(2);
+    ///document.querySelector("#result-amount").innerHTML = fees.toFixed(2);
 
 }
 
-function indexPercent(index) {
+function indexPercent() {
 
     for (let c = 0; c < percents.length; c++) {
 
-        if (index === percents[c]) {
-            let percentIndex = Number(percents[c].textContent.slice(0, -1));
-            amount(percentIndex / 100);
+        if (percents[c].classList.contains('active')) {
+            return c;
         }
 
     }
+}
 
+function removeClass() {
+
+    percents.forEach((el) => {
+
+        el.classList.remove('active');
+
+    });
 
 }
 
@@ -79,3 +97,39 @@ customAlign.addEventListener('keyup', () => {
     }
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+function indexPercent(index) {
+
+    for (let c = 0; c < percents.length; c++) {
+
+        if (index === percents[c]) {
+            let percentIndex = Number(percents[c].textContent.slice(0, -1));
+            return Number(percentIndex);
+        }
+
+    }
+} */

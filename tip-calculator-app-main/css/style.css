@@ -134,7 +134,7 @@ header {
     transition: .5s ease-out;
 }
 
-.percents-bill .percents .percents-button:hover, .percents-button.active:hover {
+.percents-bill .percents .percents-button:hover, .percents .percents-button.active {
     background-color: hsla(172, 67%, 45%, 0.5);
     color: var(--very-dark-cyan);
 }
