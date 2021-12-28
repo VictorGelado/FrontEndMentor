@@ -3,26 +3,26 @@ const resetForm = document.querySelector("#reset-form");
 
 const billInput = document.querySelector("#bill-input");
 const percents = document.querySelectorAll(".percents-button");
-const numberPeople = document.querySelector("#number-people")
+const numberPeople = document.querySelector("#number-people");
 
 
-
-
-billInput.addEventListener('change', amount);
+billInput.addEventListener('input', amount);
 
 percents.forEach((el) => {
 
-    el.addEventListener('click', function (i) {
+    el.addEventListener('click', function(i) {
 
         removeClass();
 
         el.classList.toggle('active');
 
+        amount();
+
     });
 
 });
 
-
+numberPeople.addEventListener('input', amount);
 
 
 
@@ -30,27 +30,37 @@ function amount() {
 
     let bill = Number(billInput.value);
 
-    console.log(bill)
-
     if (!bill) {
         window.alert('Please enter some value');
         billInput.focus();
     }
 
-    //let indexActiveTip = indexPercent();
-    //console.log(indexActiveTip)
-    let tipPercent = Number(percents[2].value);
- 
-    let tip = tipPercent;
-    let fees = bill * tip;
-    let tipAmount = bill + fess; 
     
+    let peoples = Number(numberPeople.value); 
 
-    console.log(tip, fees, tipAmount) 
+    if (isNaN(peoples) || peoples == 0) { 
 
+        document.querySelector("#err-people").style.visibility = "visible";
+        peoples = 1;
+    
+    }
 
+    let tipPercent = Number(indexPercent());
+    
+    isNaN(tipPercent) ? tipPercent = 0: tipPercent = tipPercent; 
+    
+    let fees = (bill * tipPercent);
+    let tipAmount = (bill + fees) / peoples; 
 
     
+    document.querySelector("#result-amount").innerHTML = `$${(fees/ 2).toFixed(2) }`;
+    document.querySelector("#result-total").innerHTML = `$${tipAmount.toFixed(2)}`;
+
+
+
+    console.log('tip'+tipPercent, 'fess'+fees, 'amount'+tipAmount) 
+
+
 
 
 
@@ -58,7 +68,6 @@ function amount() {
     //console.log('percent',percent)
 
 
-    ///document.querySelector("#result-amount").innerHTML = fees.toFixed(2);
 
 }
 
@@ -67,7 +76,7 @@ function indexPercent() {
     for (let c = 0; c < percents.length; c++) {
 
         if (percents[c].classList.contains('active')) {
-            return c;
+            return percents[c].value;
         }
 
     }
@@ -86,6 +95,7 @@ function removeClass() {
 
 resetForm.addEventListener('click', () => {
     customAlign.style.textAlign = "center";
+    removeClass();
 });
 
 customAlign.addEventListener('keyup', () => {

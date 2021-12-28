@@ -174,7 +174,7 @@ header {
     color: var(--very-dark-cyan);
 }
 
-.people .people-label label:nth-child(2) {
+.people .people-label #err-people {
     display: inline-block;
     visibility: hidden;
     position: relative;
