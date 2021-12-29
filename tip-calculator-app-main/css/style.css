@@ -65,11 +65,26 @@ header {
     margin-bottom: 2.5em;
 }
 
-.bill label {
-    display: block;
+.bill .bill-label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 6px;
+}
+
+.bill .bill-label label:first-child {
     font-weight: 700;
     color: var(--very-dark-cyan);
+}
+
+.bill .bill-label #err-bill {
+    visibility: hidden;
+    position: relative;
+    right: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #e64016;
 }
 
 .bill .input-bill {
@@ -86,6 +101,11 @@ header {
     color: var(--very-dark-cyan);
     text-align: right;
     cursor: pointer;
+}
+
+.bill .input-bill #bill-input.error {
+    outline-color: #e64016;
+    border: 2px #e64016 solid;
 }
 
 .bill .input-bill img {
@@ -204,6 +224,7 @@ header {
 
 .people .input-people #number-people.error {
     outline-color: #e64016;
+    border: 2px #e64016 solid;
 }
 
 .people .input-people img {

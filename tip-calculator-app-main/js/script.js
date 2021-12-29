@@ -10,7 +10,7 @@ billInput.addEventListener('input', amount);
 
 percents.forEach((el) => {
 
-    el.addEventListener('click', function(i) {
+    el.addEventListener('click', function (i) {
 
         removeClass();
 
@@ -25,49 +25,36 @@ percents.forEach((el) => {
 numberPeople.addEventListener('input', amount);
 
 
-
 function amount() {
+
+    verifyPeoples();
+
+    verifyBill();
 
     let bill = Number(billInput.value);
 
-    if (!bill) {
-        window.alert('Please enter some value');
-        billInput.focus();
-    }
-
-    
-    let peoples = Number(numberPeople.value); 
-
-    if (isNaN(peoples) || peoples == 0) { 
-
-        document.querySelector("#err-people").style.visibility = "visible";
-        peoples = 1;
-    
-    }
-
+    let peoples = Number(numberPeople.value);
     let tipPercent = Number(indexPercent());
-    
-    isNaN(tipPercent) ? tipPercent = 0: tipPercent = tipPercent; 
-    
+
+    isNaN(tipPercent) ? tipPercent = 0 : tipPercent = tipPercent;
+
     let fees = (bill * tipPercent);
-    let tipAmount = (bill + fees) / peoples; 
+
+    if (isNaN(peoples) || peoples == 0) {
+        fees = 0;
+        peoples = 1;
+    }
 
     
-    document.querySelector("#result-amount").innerHTML = `$${(fees/ 2).toFixed(2) }`;
+    let feesPerson = fees / peoples;
+    
+    let tipAmount = (bill + fees) / peoples;
+    
+    console.log(feesPerson, tipAmount)
+    
+
+    document.querySelector("#result-amount").innerHTML = `$${feesPerson.toFixed(2)}`;
     document.querySelector("#result-total").innerHTML = `$${tipAmount.toFixed(2)}`;
-
-
-
-    console.log('tip'+tipPercent, 'fess'+fees, 'amount'+tipAmount) 
-
-
-
-
-
-    //console.log('bill', tipAmount)
-    //console.log('percent',percent)
-
-
 
 }
 
@@ -92,13 +79,46 @@ function removeClass() {
 
 }
 
+function verifyPeoples() {
+
+    let peopleVerify = Number(numberPeople.value);
+
+    if (isNaN(peopleVerify) || peopleVerify == 0) {
+
+        document.querySelector("#err-people").style.visibility = "visible";
+        numberPeople.classList.add("error");
+
+    } else {
+        document.querySelector("#err-people").style.visibility = "hidden";
+        numberPeople.classList.remove("error");
+    }
+
+}
+
+function verifyBill() {
+
+    let billVerify = Number(billInput.value);
+
+    if (isNaN(billVerify) || billVerify == 0) {
+
+        document.querySelector("#err-bill").style.visibility = "visible";
+        billInput.classList.add("error");
+        billInput.focus();
+
+    } else {
+        document.querySelector("#err-bill").style.visibility = "hidden";
+        billInput.classList.remove("error");
+    }
+
+}
+
 
 resetForm.addEventListener('click', () => {
     customAlign.style.textAlign = "center";
     removeClass();
 });
 
-customAlign.addEventListener('keyup', () => {
+customAlign.addEventListener('input', () => {
 
     if (customAlign.value.length > 0) {
         customAlign.style.textAlign = "end";

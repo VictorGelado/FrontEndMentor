@@ -26,7 +26,10 @@
 			<article class="values">
 				<form id="calculator">
 					<div class="bill">
-						<label for="bill-input">Bill</label>
+						<div class="bill-label">
+							<label for="bill-input">Bill</label>
+							<label for="number-people" id="err-bill">Can't be zero</label>
+						</div>
 						<div class="input-bill">
 							<input type="number" id="bill-input" placeholder="0" autofocus required min="1">
 							<img src="./images/icon-dollar.svg" alt="Icon dólar">
@@ -42,7 +45,7 @@
 							<button class="percents-button" type="button" value="0.15">15%</button>
 							<button class="percents-button" type="button" value="0.25">25%</button>
 							<button class="percents-button" type="button" value="0.5">50%</button>
-							<input type="number" id="custom" placeholder="Custom" min="1">				
+							<input type="number" id="custom" placeholder="Custom">				
 						</div>
 					</div>
 
@@ -52,7 +55,7 @@
 							<label for="number-people" id="err-people">Can't be zero</label>
 						</div>						
 						<div class="input-people">							
-							<input type="number" id="number-people" placeholder="0" required min="1">
+							<input type="number" id="number-people" placeholder="0" required  min="0">
 							<img src="./images/icon-person.svg" alt="Icon person">
 						</div>
 					</div>
