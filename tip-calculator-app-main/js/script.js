@@ -1,11 +1,12 @@
-const customAlign = document.querySelector("#custom");
 const resetForm = document.querySelector("#reset-form");
 
 const billInput = document.querySelector("#bill-input");
 const percents = document.querySelectorAll(".percents-button");
 const numberPeople = document.querySelector("#number-people");
+const customTip = document.querySelector("#custom");
 
 
+/* Events */
 billInput.addEventListener('input', amount);
 
 percents.forEach((el) => {
@@ -16,6 +17,8 @@ percents.forEach((el) => {
 
         el.classList.toggle('active');
 
+        clearCustom();
+
         amount();
 
     });
@@ -24,7 +27,11 @@ percents.forEach((el) => {
 
 numberPeople.addEventListener('input', amount);
 
+customTip.addEventListener('input', amount);
 
+
+
+/* Functions */
 function amount() {
 
     verifyPeoples();
@@ -32,9 +39,26 @@ function amount() {
     verifyBill();
 
     let bill = Number(billInput.value);
-
     let peoples = Number(numberPeople.value);
-    let tipPercent = Number(indexPercent());
+    var tipPercent = Number(indexPercent());
+    /* let customTipValue = Number(customTip.value / 100); */
+
+    if (customTip.value.length > 0) {
+    
+        removeClass();
+        tipPercent = Number(customTip.value / 100);
+
+    }
+
+    if (!tipPercent) {
+
+        numberPeople.classList.remove("error");
+        billInput.classList.remove("error");
+
+        document.querySelector("#err-people").style.visibility = "hidden";
+        document.querySelector("#err-bill").style.visibility = "hidden";
+
+    }
 
     isNaN(tipPercent) ? tipPercent = 0 : tipPercent = tipPercent;
 
@@ -45,13 +69,10 @@ function amount() {
         peoples = 1;
     }
 
-    
+
     let feesPerson = fees / peoples;
-    
+
     let tipAmount = (bill + fees) / peoples;
-    
-    console.log(feesPerson, tipAmount)
-    
 
     document.querySelector("#result-amount").innerHTML = `$${feesPerson.toFixed(2)}`;
     document.querySelector("#result-total").innerHTML = `$${tipAmount.toFixed(2)}`;
@@ -112,18 +133,27 @@ function verifyBill() {
 
 }
 
+function clearCustom() {
+
+    customTip.value = '';
+    customTip.style.textAlign = ""
+
+}
+
 
 resetForm.addEventListener('click', () => {
-    customAlign.style.textAlign = "center";
+    customTip.style.textAlign = "center";
+    document.querySelector("#result-amount").innerHTML = `$0.00`;
+    document.querySelector("#result-total").innerHTML = `$0.00`;
     removeClass();
 });
 
-customAlign.addEventListener('input', () => {
+customTip.addEventListener('input', () => {
 
-    if (customAlign.value.length > 0) {
-        customAlign.style.textAlign = "end";
+    if (customTip.value.length > 0) {
+        customTip.style.textAlign = "end";
     } else {
-        customAlign.style.textAlign = "center";
+        customTip.style.textAlign = "center";
     }
 
 });
