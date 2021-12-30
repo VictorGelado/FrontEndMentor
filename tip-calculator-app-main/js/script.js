@@ -1,3 +1,4 @@
+const form = document.querySelector("#calculator");
 const resetForm = document.querySelector("#reset-form");
 
 const billInput = document.querySelector("#bill-input");
@@ -32,23 +33,34 @@ customTip.addEventListener('input', amount);
 
 
 /* Functions */
-function amount() {
+function amount(reset) {
 
     verifyPeoples();
 
     verifyBill();
 
     let bill = Number(billInput.value);
-    let peoples = Number(numberPeople.value);
+    
+    if (numberPeople.value.includes(',') || numberPeople.value.includes('.')) {
+        window.alert('Integer numbers only');
+
+        if (numberPeople.value.includes(',')) {
+            numberPeople.value = numberPeople.value.replace(',', '');
+        } else {
+            numberPeople.value = numberPeople.value.replace('.', '');
+        }
+    }
+
+    let peoples = Number.parseInt(numberPeople.value);
     var tipPercent = Number(indexPercent());
-    /* let customTipValue = Number(customTip.value / 100); */
+    let customTipValue = Number(customTip.value / 100); 
 
     if (customTip.value.length > 0) {
-    
-        removeClass();
-        tipPercent = Number(customTip.value / 100);
 
-    }
+        removeClass();
+        tipPercent = customTipValue;
+
+    } 
 
     if (!tipPercent) {
 
@@ -74,8 +86,23 @@ function amount() {
 
     let tipAmount = (bill + fees) / peoples;
 
+    if (reset) {
+        
+    }
+
+
+
     document.querySelector("#result-amount").innerHTML = `$${feesPerson.toFixed(2)}`;
     document.querySelector("#result-total").innerHTML = `$${tipAmount.toFixed(2)}`;
+
+    if (verifyValuesReset()) {
+        resetForm.classList.add("active");
+        resetForm.removeAttribute("disabled");
+    } else {
+        resetForm.classList.remove("active");
+        resetForm.setAttribute("disabled", "disabled");
+    }
+
 
 }
 
@@ -140,12 +167,44 @@ function clearCustom() {
 
 }
 
+function verifyValuesReset() {
+
+    let childrenForm = document.querySelectorAll("#calculator input");
+    let childrenInputs = 0;
+    let valuesInputs = false;
+
+    for (let c = 0; c < childrenForm.length; c++) {
+
+        if (childrenForm[c].value.length != 0) {
+            childrenInputs += 1;
+        }
+
+    }
+
+    percents.forEach((el) => {
+
+        if (el.classList.contains("active")) {
+            childrenInputs += 1;
+        }
+
+    });
+
+    if (childrenInputs > 0) {
+        valuesInputs = true;
+    }
+
+    return valuesInputs;
+
+}
 
 resetForm.addEventListener('click', () => {
+
     customTip.style.textAlign = "center";
     document.querySelector("#result-amount").innerHTML = `$0.00`;
     document.querySelector("#result-total").innerHTML = `$0.00`;
     removeClass();
+    amount(true); 
+    
 });
 
 customTip.addEventListener('input', () => {
@@ -157,39 +216,3 @@ customTip.addEventListener('input', () => {
     }
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-function indexPercent(index) {
-
-    for (let c = 0; c < percents.length; c++) {
-
-        if (index === percents[c]) {
-            let percentIndex = Number(percents[c].textContent.slice(0, -1));
-            return Number(percentIndex);
-        }
-
-    }
-} */

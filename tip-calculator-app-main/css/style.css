@@ -320,8 +320,12 @@ header {
     cursor: pointer;
 }
 
-.result #reset-form:hover {
+.result #reset-form.active {
     opacity: 1;
+}
+
+.result #reset-form.active:hover {
+    filter: contrast(2);
 }
 
 /* Footer */
@@ -342,7 +346,7 @@ header {
     }
 }
 
-@media (max-width: 832px) {
+@media (max-width: 835px) {
     .bill {
         margin-bottom: 0.5em;
     }
@@ -373,7 +377,12 @@ header {
 
     .result {
         max-height: 260px;
+        padding: 15px 15px 4em 15px;
         width: 100%;
+    }
+
+    .result .amount {
+        margin-bottom: 1em;
     }
 }
 
@@ -385,14 +394,6 @@ header {
 
     .values {
         max-height: unset;
-    }
-
-    .result {
-        padding: 15px 15px 4em 15px;
-    }
-
-    .result .amount {
-        margin-bottom: 1em;
     }
 
     .result .amount h3,
