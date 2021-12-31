@@ -112,11 +112,15 @@ function changeValues() {
     //let peopleValue = 0;
     //let amount = 0;
     //let fees = 0;
+    if (isNaN(peopleValue) || peopleValue == 0) {
+        peopleValue = 1;
+    } 
+
     let feesValue = billValue * percentValue;
     amount = billValue + feesValue;
     let amountPerson = amount / peopleValue;
 
-    let feesPerson = feesValue / 2;
+    let feesPerson = feesValue / peopleValue;
 
 
    document.querySelector("#result-amount").innerHTML = `$${feesPerson.toFixed(2)}`;
