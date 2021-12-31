@@ -2,6 +2,7 @@ const billInput = document.querySelector("#bill-input");
 const percentsBill = document.querySelectorAll(".percents-button");
 const customPercent = document.querySelector("#custom");
 const peopleInput = document.querySelector("#number-people");
+const resetButton = document.querySelector("#reset-form");
 
 let billValue = 0;
 let percentValue = 0;
@@ -14,11 +15,11 @@ billInput.addEventListener('input', catchInput);
 
 percentsBill.forEach((e) => {
 
-    e.addEventListener('click', function (e) {
+    e.addEventListener('click', function(e) {
 
         removeClass();
         e.target.classList.add("active");
-        percentValue = Number(e.target.value);
+        percentValue = Number(e.target.value);         
 
         customPercent.value = '';
 
@@ -35,14 +36,12 @@ customPercent.addEventListener('input', catchPercent);
 
 peopleInput.addEventListener('input', catchPeople);
 
+resetButton.addEventListener('click', resetCalculator);
+
 
 function catchInput() {
 
-    if (billInput.value.length > 0) {
-
-        billValue = Number(billInput.value);
-
-    }
+    billValue = Number(billInput.value);
 
     verifyValues(billValue, billInput, "#err-bill");
 
@@ -107,22 +106,51 @@ function verifyValues(value, elementVerify, elementVisibleHidden) {
 
 function changeValues() {
 
-    //let billValue = 0;
-    //let percentValue = 0;
-    //let peopleValue = 0;
-    //let amount = 0;
-    //let fees = 0;
+    verifyInputs();
+
     if (isNaN(peopleValue) || peopleValue == 0) {
         peopleValue = 1;
-    } 
+    }
 
     let feesValue = billValue * percentValue;
     amount = billValue + feesValue;
     let amountPerson = amount / peopleValue;
-
     let feesPerson = feesValue / peopleValue;
 
-
-   document.querySelector("#result-amount").innerHTML = `$${feesPerson.toFixed(2)}`;
+    document.querySelector("#result-amount").innerHTML = `$${feesPerson.toFixed(2)}`;
     document.querySelector("#result-total").innerHTML = `$${amountPerson.toFixed(2)}`;
+}
+
+function verifyInputs() {
+
+    /* let childrenForm = document.querySelectorAll("#calculator input");
+    let inputsConrains
+
+    childrenForm.forEach() */
+
+    console.log(billValue > 0 || percentValue > 0 || peopleValue > 0)
+    if (billValue > 0 || percentValue > 0 || peopleValue > 0) {
+        resetButton.removeAttribute('disabled');
+        resetButton.classList.add('active');    
+    } else {
+        resetButton.setAttribute('disabled', 'disabled');
+        resetButton.classList.remove('active'); 
+    }
+
+}
+
+function resetCalculator() {
+
+    billValue = 0;
+    percentValue = 0;
+    peopleValue = 0;
+    amount = 0;
+    fees = 0;
+
+    removeClass();
+
+    verifyInputs();
+    
+    changeValues();
+
 }
