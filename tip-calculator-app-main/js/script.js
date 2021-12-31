@@ -1,218 +1,124 @@
-const form = document.querySelector("#calculator");
-const resetForm = document.querySelector("#reset-form");
-
 const billInput = document.querySelector("#bill-input");
-const percents = document.querySelectorAll(".percents-button");
-const numberPeople = document.querySelector("#number-people");
-const customTip = document.querySelector("#custom");
+const percentsBill = document.querySelectorAll(".percents-button");
+const customPercent = document.querySelector("#custom");
+const peopleInput = document.querySelector("#number-people");
+
+let billValue = 0;
+let percentValue = 0;
+let peopleValue = 0;
+let amount = 0;
+let fees = 0;
 
 
-/* Events */
-billInput.addEventListener('input', amount);
+billInput.addEventListener('input', catchInput);
 
-percents.forEach((el) => {
+percentsBill.forEach((e) => {
 
-    el.addEventListener('click', function (i) {
+    e.addEventListener('click', function (e) {
 
         removeClass();
+        e.target.classList.add("active");
+        percentValue = Number(e.target.value);
 
-        el.classList.toggle('active');
+        customPercent.value = '';
 
-        clearCustom();
+        verifyValues(billValue, billInput, "#err-bill");
+        verifyValues(peopleValue, peopleInput, "#err-people");
 
-        amount();
+        changeValues();
 
     });
 
 });
 
-numberPeople.addEventListener('input', amount);
+customPercent.addEventListener('input', catchPercent);
 
-customTip.addEventListener('input', amount);
+peopleInput.addEventListener('input', catchPeople);
 
 
+function catchInput() {
 
-/* Functions */
-function amount(reset) {
+    if (billInput.value.length > 0) {
 
-    verifyPeoples();
-
-    verifyBill();
-
-    let bill = Number(billInput.value);
-    
-    if (numberPeople.value.includes(',') || numberPeople.value.includes('.')) {
-        window.alert('Integer numbers only');
-
-        if (numberPeople.value.includes(',')) {
-            numberPeople.value = numberPeople.value.replace(',', '');
-        } else {
-            numberPeople.value = numberPeople.value.replace('.', '');
-        }
-    }
-
-    let peoples = Number.parseInt(numberPeople.value);
-    var tipPercent = Number(indexPercent());
-    let customTipValue = Number(customTip.value / 100); 
-
-    if (customTip.value.length > 0) {
-
-        removeClass();
-        tipPercent = customTipValue;
-
-    } 
-
-    if (!tipPercent) {
-
-        numberPeople.classList.remove("error");
-        billInput.classList.remove("error");
-
-        document.querySelector("#err-people").style.visibility = "hidden";
-        document.querySelector("#err-bill").style.visibility = "hidden";
+        billValue = Number(billInput.value);
 
     }
 
-    isNaN(tipPercent) ? tipPercent = 0 : tipPercent = tipPercent;
+    verifyValues(billValue, billInput, "#err-bill");
 
-    let fees = (bill * tipPercent);
+    changeValues();
 
-    if (isNaN(peoples) || peoples == 0) {
-        fees = 0;
-        peoples = 1;
-    }
-
-
-    let feesPerson = fees / peoples;
-
-    let tipAmount = (bill + fees) / peoples;
-
-    if (reset) {
-        
-    }
-
-
-
-    document.querySelector("#result-amount").innerHTML = `$${feesPerson.toFixed(2)}`;
-    document.querySelector("#result-total").innerHTML = `$${tipAmount.toFixed(2)}`;
-
-    if (verifyValuesReset()) {
-        resetForm.classList.add("active");
-        resetForm.removeAttribute("disabled");
-    } else {
-        resetForm.classList.remove("active");
-        resetForm.setAttribute("disabled", "disabled");
-    }
-
-
-}
-
-function indexPercent() {
-
-    for (let c = 0; c < percents.length; c++) {
-
-        if (percents[c].classList.contains('active')) {
-            return percents[c].value;
-        }
-
-    }
 }
 
 function removeClass() {
 
-    percents.forEach((el) => {
+    percentsBill.forEach((e) => {
 
-        el.classList.remove('active');
-
-    });
-
-}
-
-function verifyPeoples() {
-
-    let peopleVerify = Number(numberPeople.value);
-
-    if (isNaN(peopleVerify) || peopleVerify == 0) {
-
-        document.querySelector("#err-people").style.visibility = "visible";
-        numberPeople.classList.add("error");
-
-    } else {
-        document.querySelector("#err-people").style.visibility = "hidden";
-        numberPeople.classList.remove("error");
-    }
-
-}
-
-function verifyBill() {
-
-    let billVerify = Number(billInput.value);
-
-    if (isNaN(billVerify) || billVerify == 0) {
-
-        document.querySelector("#err-bill").style.visibility = "visible";
-        billInput.classList.add("error");
-        billInput.focus();
-
-    } else {
-        document.querySelector("#err-bill").style.visibility = "hidden";
-        billInput.classList.remove("error");
-    }
-
-}
-
-function clearCustom() {
-
-    customTip.value = '';
-    customTip.style.textAlign = ""
-
-}
-
-function verifyValuesReset() {
-
-    let childrenForm = document.querySelectorAll("#calculator input");
-    let childrenInputs = 0;
-    let valuesInputs = false;
-
-    for (let c = 0; c < childrenForm.length; c++) {
-
-        if (childrenForm[c].value.length != 0) {
-            childrenInputs += 1;
-        }
-
-    }
-
-    percents.forEach((el) => {
-
-        if (el.classList.contains("active")) {
-            childrenInputs += 1;
-        }
+        e.classList.remove("active");
 
     });
 
-    if (childrenInputs > 0) {
-        valuesInputs = true;
+}
+
+function catchPercent() {
+
+    if (customPercent.value.length > 0) {
+
+        removeClass();
+        percentValue = Number(customPercent.value);
+
+        customPercent.style.textAlign = 'end';
+
+    } else {
+        customPercent.style.textAlign = 'center';
     }
 
-    return valuesInputs;
+    changeValues();
 
 }
 
-resetForm.addEventListener('click', () => {
+function catchPeople() {
 
-    customTip.style.textAlign = "center";
-    document.querySelector("#result-amount").innerHTML = `$0.00`;
-    document.querySelector("#result-total").innerHTML = `$0.00`;
-    removeClass();
-    amount(true); 
-    
-});
+    if (peopleInput.value.length > 0) {
 
-customTip.addEventListener('input', () => {
+        peopleValue = Number.parseInt(peopleInput.value);
 
-    if (customTip.value.length > 0) {
-        customTip.style.textAlign = "end";
-    } else {
-        customTip.style.textAlign = "center";
     }
 
-});
+    verifyValues(peopleValue, peopleInput, "#err-people");
+
+    changeValues();
+
+}
+
+function verifyValues(value, elementVerify, elementVisibleHidden) {
+
+    if (elementVerify.value.length == 0 || value == 0) {
+
+        elementVerify.classList.add("error");
+        document.querySelector(elementVisibleHidden).style.visibility = "visible";
+
+    } else {
+        elementVerify.classList.remove("error");
+        document.querySelector(elementVisibleHidden).style.visibility = "hidden";
+    }
+
+}
+
+function changeValues() {
+
+    //let billValue = 0;
+    //let percentValue = 0;
+    //let peopleValue = 0;
+    //let amount = 0;
+    //let fees = 0;
+    let feesValue = billValue * percentValue;
+    amount = billValue + feesValue;
+    let amountPerson = amount / peopleValue;
+
+    let feesPerson = feesValue / 2;
+
+
+   document.querySelector("#result-amount").innerHTML = `$${feesPerson.toFixed(2)}`;
+    document.querySelector("#result-total").innerHTML = `$${amountPerson.toFixed(2)}`;
+}
