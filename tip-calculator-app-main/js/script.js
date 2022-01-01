@@ -15,11 +15,11 @@ billInput.addEventListener('input', catchInput);
 
 percentsBill.forEach((e) => {
 
-    e.addEventListener('click', function(e) {
+    e.addEventListener('click', function (e) {
 
         removeClass();
         e.target.classList.add("active");
-        percentValue = Number(e.target.value);         
+        percentValue = Number(e.target.value);
 
         customPercent.value = '';
 
@@ -61,14 +61,15 @@ function removeClass() {
 
 function catchPercent() {
 
-    if (customPercent.value.length > 0) {
+    removeClass();
+    verifyValues(billValue, billInput, "#err-bill");
+    verifyValues(peopleValue, peopleInput, "#err-people");
 
-        removeClass();
-        percentValue = Number(customPercent.value);
+    percentValue = Number(customPercent.value) / 100;
 
-        customPercent.style.textAlign = 'end';
+    customPercent.style.textAlign = 'end';
 
-    } else {
+    if (customPercent.value) {
         customPercent.style.textAlign = 'center';
     }
 
@@ -78,11 +79,7 @@ function catchPercent() {
 
 function catchPeople() {
 
-    if (peopleInput.value.length > 0) {
-
-        peopleValue = Number.parseInt(peopleInput.value);
-
-    }
+    peopleValue = Number.parseInt(peopleInput.value);
 
     verifyValues(peopleValue, peopleInput, "#err-people");
 
@@ -123,18 +120,31 @@ function changeValues() {
 
 function verifyInputs() {
 
-    /* let childrenForm = document.querySelectorAll("#calculator input");
-    let inputsConrains
+    let childrenForm = document.querySelectorAll("#calculator input");
+    let inputsContains = 0;
 
-    childrenForm.forEach() */
+    childrenForm.forEach((e) => {
 
-    console.log(billValue > 0 || percentValue > 0 || peopleValue > 0)
-    if (billValue > 0 || percentValue > 0 || peopleValue > 0) {
+        if (e.value.length > 0) {
+            inputsContains += 1;
+        }
+
+    });
+
+    percentsBill.forEach((e) => {
+
+        if (e.classList.contains('active')) {
+            inputsContains += 1;
+        }
+
+    });
+
+    if (inputsContains > 0) {
         resetButton.removeAttribute('disabled');
-        resetButton.classList.add('active');    
+        resetButton.classList.add('active');
     } else {
         resetButton.setAttribute('disabled', 'disabled');
-        resetButton.classList.remove('active'); 
+        resetButton.classList.remove('active');
     }
 
 }
@@ -149,8 +159,6 @@ function resetCalculator() {
 
     removeClass();
 
-    verifyInputs();
-    
     changeValues();
 
 }
