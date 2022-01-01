@@ -301,12 +301,15 @@ header {
     font-weight: 700;
 }
 
-.result #reset-form {
+.result .button-reset {
     width: 80%;
-    padding: 12px 10px;
     position: absolute;
-    left: 50%;
     bottom: 40px;
+}
+
+.result .button-reset #reset-form {
+    width: 100%;
+    padding: 12px 10px;
     background-color: var(--strong-cyan);
     opacity: 0.3;
     color: var(--very-dark-cyan);
@@ -314,18 +317,17 @@ header {
     border-radius: 6px;
     font-size: 18px;
     font-weight: 700;
-    transform: translateX(-50%);
-    transition: .5s ease-in;
+    transition: .2s ease-out;
     text-transform: uppercase;
     cursor: pointer;
 }
 
-.result #reset-form.active {
-    opacity: 1;
+.result .button-reset #reset-form.active {
+    opacity: .7;
 }
 
-.result #reset-form.active:hover {
-    filter: contrast(2);
+.result .button-reset #reset-form.active:hover {
+    opacity: 1;
 }
 
 /* Footer */

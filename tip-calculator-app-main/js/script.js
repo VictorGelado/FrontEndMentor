@@ -121,12 +121,12 @@ function changeValues() {
 function verifyInputs() {
 
     let childrenForm = document.querySelectorAll("#calculator input");
-    let inputsContains = 0;
+    let inputsContains = false;
 
     childrenForm.forEach((e) => {
 
-        if (e.value.length > 0) {
-            inputsContains += 1;
+        if (e.value) {
+            inputsContains = true;
         }
 
     });
@@ -134,18 +134,19 @@ function verifyInputs() {
     percentsBill.forEach((e) => {
 
         if (e.classList.contains('active')) {
-            inputsContains += 1;
+            inputsContains = true;
         }
 
     });
 
-    if (inputsContains > 0) {
+
+    if (inputsContains) {
         resetButton.removeAttribute('disabled');
         resetButton.classList.add('active');
     } else {
         resetButton.setAttribute('disabled', 'disabled');
         resetButton.classList.remove('active');
-    }
+    }  
 
 }
 
