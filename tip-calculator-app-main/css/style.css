@@ -28,29 +28,28 @@ input {
 
 .wrapper {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
-    gap: 4.5em;
     background-color: var(--very-light-cyan);
 }
 
 header {
     margin-top: 4.5em;
+    margin-bottom: 4.5em;
 }
 
 .container {
     width: 85%;
     max-width: 925px;
     height: 482px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     background-color: var(--white);
     border-radius: 20px;
-    margin-bottom: 40px;
 }
 
 .values {
@@ -330,13 +329,21 @@ header {
 
 /* Footer */
 .attribution {
-    display: none;
-    font-size: 11px;
+    height: 40px;
+    margin-bottom: 15px;
     text-align: center;
+    font-weight: 700;
+    color: var(--strong-cyan);
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: var(--very-dark-cyan);
+    text-decoration: none;
+    transition: all .5s ease-out;
+}
+
+.attribution a:hover {
+    color: var(--white);
 }
 
 /* Media */
