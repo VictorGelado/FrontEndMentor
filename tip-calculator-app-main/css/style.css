@@ -305,13 +305,14 @@ header {
     width: 80%;
     position: absolute;
     bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .result .button-reset #reset-form {
     width: 100%;
     padding: 12px 10px;
     background-color: var(--strong-cyan);
-    opacity: 0.3;
     color: var(--very-dark-cyan);
     border: none;
     border-radius: 6px;
@@ -322,12 +323,8 @@ header {
     cursor: pointer;
 }
 
-.result .button-reset #reset-form.active {
-    opacity: .7;
-}
-
-.result .button-reset #reset-form.active:hover {
-    opacity: 1;
+.result .button-reset #reset-form:hover {
+    background-color: hsl(172, 51%, 63%);
 }
 
 /* Footer */
@@ -345,6 +342,11 @@ header {
 @media (max-width: 1088px) {
     .percents-bill .percents {
         justify-content: center;
+    }
+
+    .values .bill,
+    .percents-bill {
+        margin-bottom: 1.2em;
     }
 }
 
@@ -370,11 +372,6 @@ header {
         height: unset;
         width: 100%;
         margin-bottom: 2.5em;
-    }
-
-    .values .bill,
-    .percents-bill {
-        margin-bottom: 1.5em;
     }
 
     .result {

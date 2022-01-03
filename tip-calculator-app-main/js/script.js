@@ -103,8 +103,6 @@ function verifyValues(value, elementVerify, elementVisibleHidden) {
 
 function changeValues() {
 
-    verifyInputs();
-
     if (isNaN(peopleValue) || peopleValue == 0) {
         peopleValue = 1;
     }
@@ -118,38 +116,6 @@ function changeValues() {
     document.querySelector("#result-total").innerHTML = `$${amountPerson.toFixed(2)}`;
 }
 
-function verifyInputs() {
-
-    let childrenForm = document.querySelectorAll("#calculator input");
-    let inputsContains = false;
-
-    childrenForm.forEach((e) => {
-
-        if (e.value) {
-            inputsContains = true;
-        }
-
-    });
-
-    percentsBill.forEach((e) => {
-
-        if (e.classList.contains('active')) {
-            inputsContains = true;
-        }
-
-    });
-
-
-    if (inputsContains) {
-        resetButton.removeAttribute('disabled');
-        resetButton.classList.add('active');
-    } else {
-        resetButton.setAttribute('disabled', 'disabled');
-        resetButton.classList.remove('active');
-    }  
-
-}
-
 function resetCalculator() {
 
     billValue = 0;
@@ -157,6 +123,11 @@ function resetCalculator() {
     peopleValue = 0;
     amount = 0;
     fees = 0;
+
+    billInput.classList.remove("error");
+    peopleInput.classList.remove("error");
+    document.querySelector("#err-bill").style.visibility = "hidden";
+    document.querySelector("#err-people").style.visibility = "hidden";
 
     removeClass();
 
