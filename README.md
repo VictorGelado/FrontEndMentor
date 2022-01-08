@@ -7,4 +7,4 @@
 ###
 
 <h1 align="center" style="color: #3f4;">Would you like to see my designs? Do like this:</h1>
-<div align="center"><img src="./how-to-use.gif" alt="How to use"></img></div>
+<div align="center"><img src="./how-to-use.gif" alt="How to use"/></div>
