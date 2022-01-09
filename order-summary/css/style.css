@@ -1,4 +1,11 @@
 body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+    position: relative;
     background-color: hsl(225, 100%, 94%);
     font-family: 'Red Hat Display', sans-serif;
     font-size: 16px;
@@ -16,19 +23,14 @@ body::before {
     z-index: 2;
 }
 
-
 .container {
     height: 560px;
     width: 90%;
     max-width: 350px;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 20px;
     z-index: 10;
     border-radius: 15px;
     background-color: hsl(225, 100%, 98%);
@@ -157,9 +159,9 @@ button {
 
 
 /*Footer*/
-
 .attribution {
-    margin-top: 20px;
+    position: relative;
+    z-index: 4;
     font-size: 13px;
     text-align: center;
 }
