@@ -20,9 +20,10 @@ body {
     font-size: 15px; 
 }
 
-main {
+.wrapper {
     height: 90vh;
-    width: 65%;    
+    width: 65%; 
+    max-width: 920px;   
 }
 
 /* container */
@@ -118,8 +119,8 @@ main {
     color: var(--very-light-gray);
 }
 
-@media (max-width: 1048px) { /* Meus responsivo não são dos melhores, ainda estou aprendendo a usar :) */
-    main {
+@media (max-width: 1048px) {
+    .wrapper {
         height: max-content;
         width: 100%;
         display: flex;
