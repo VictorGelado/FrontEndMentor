@@ -36,7 +36,7 @@ body {
     margin-top: 20px;
     background-color: var(--more-lees-dark-blue);
     border-radius: 15px;
-    box-shadow: 0 45px 30px 28px rgba(0, 0, 0, 0.575);
+    box-shadow: 0 20px 15px 40px rgba(0, 0, 0, 0.048), 0 10px 25px 10px rgba(0, 0, 0, 0.568);
 }
 
 /* Container wrapping */
