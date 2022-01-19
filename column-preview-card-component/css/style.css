@@ -24,6 +24,10 @@ body {
     height: 90vh;
     width: 65%; 
     max-width: 920px;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 /* container */
