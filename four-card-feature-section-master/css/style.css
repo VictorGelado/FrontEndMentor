@@ -1,10 +1,57 @@
+:root {
+/*  Colors */
+
+/* Primary */
+--red: hsl(0, 78%, 62%);
+--cyan: hsl(180, 62%, 55%);
+--orange: hsl(34, 97%, 64%);
+--blue: hsl(212, 86%, 64%);
+
+/* Neutral */
+--very-dark-blue: hsl(234, 12%, 34%);
+--grayish-blue: hsl(229, 6%, 66%);
+--very-light-gray: hsl(0, 0%, 98%);
+}
+
+/* Normalize */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+header {
+  width: 100%;
+  height: 156px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .content {
+  max-width: 508px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
 
 
 
-
+/* Footer */
+footer {
+  height: 40px;
+  width: 100%;
+}
 
 .attribution {
-  font-size: 11px;
   text-align: center;
 }
 .attribution a {
