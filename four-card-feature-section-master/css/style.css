@@ -150,8 +150,6 @@ main {
   justify-content: end;
 }
 
-
-
 /* Footer */
 footer {
   width: 100%;
@@ -174,3 +172,26 @@ footer {
 .attribution a:hover {
   color: var(--blue);
 } 
+
+/* Media */
+@media (max-width: 837px) {
+  .cards {
+    max-width: 75%; 
+    height: unset;
+    grid-template-columns: 4fr;
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: unset;
+  }
+  .card {
+    grid-column-start: 1;
+    grid-row: unset;
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 375px) {
+  .cards {    
+    max-width: 80%;
+    grid-template-columns: 1fr;
+  }
+}
