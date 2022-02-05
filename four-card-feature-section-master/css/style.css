@@ -189,7 +189,22 @@ footer {
   }
 }
 
+@media (max-width: 517px) {
+  header .content {
+    max-width: 80%;
+  } 
+  header .content h1, header .content p:nth-child(1) {
+    font-size: 25px;
+  }
+}
+
 @media (max-width: 375px) {
+  header .content {
+    max-width: 300px;
+  } 
+  header .content h1, header .content p:nth-child(1) {
+    font-size: 23px;
+  }
   .cards {    
     max-width: 80%;
     grid-template-columns: 1fr;
