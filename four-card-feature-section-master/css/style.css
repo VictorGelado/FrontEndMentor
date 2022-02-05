@@ -57,6 +57,10 @@ header .content p:nth-child(1), header .content h1 {
   color: var(--very-dark-blue);
 }
 
+header .content h1 {
+  margin-bottom: 10px;
+}
+
 header .content p:nth-child(1) {
   font-weight: 200;
   font-size: 30px;
@@ -95,13 +99,23 @@ main {
   box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
 
-.cards .card .header {
+.header {
   display: block;
   padding: 0;
   grid-row: 1 / 2;
 }
 
-.cards .card .image-wrapper {
+.header h3 {
+  color: var(--very-dark-blue);
+  margin-bottom: 6px;
+}
+
+.header p {
+  font-weight: 400;
+  color: var(--grayish-blue);
+}
+
+.image-wrapper {
   grid-row: 3 / 4;
 }
 
@@ -150,6 +164,13 @@ footer {
 .attribution {
   text-align: center;
 }
+
 .attribution a {
-  color: var(--very-light-gray);
+  text-decoration: none;
+  color: var(--red);
+  transition: .8s ease-out;
 }
+
+.attribution a:hover {
+  color: var(--blue);
+} 
