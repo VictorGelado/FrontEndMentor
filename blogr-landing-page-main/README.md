@@ -20,6 +20,8 @@ This is a solution to the [Blogr landing page challenge on Frontend Mentor](http
 
 ## Overview
 
+> Under development
+
 ### The challenge
 
 Users should be able to:
@@ -41,8 +43,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Solution](https://victorgelado.github.io/FrontEndMentor/blogr-landing-page-main/)
 
 ## My process
 
