@@ -25,14 +25,19 @@
 --very-dark-desaturated-blue: hsl(237, 23%, 32%);
 }
 
-
+.blogr {
+  width: 100vw;
+  height: 85vh;
+  background: linear-gradient(var(--very-light-red), var(--light-red));
+  border-radius: 0 0 0 50px;
+  /* background: url('../images/bg-pattern-intro-desktop.svg'); */
+}
 
 
 
 
 
 .attribution {
-  font-size: 11px;
   text-align: center;
 }
 .attribution a {
