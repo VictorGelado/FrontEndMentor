@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
   
   <title>Frontend Mentor[Blogr]</title>
 </head>
 <body>
 
   <section class="blogr"> <!-- Blogr -->
-    <header class="nav-menu">
-      <nav class="menu-left">
+    <header class="nav-menu"> <!-- Header -->
+      <nav class="menu-left"> <!-- Menu -->
         <div class="logo">
           <a href="./index.html"><img src="./images/logo.svg" alt="Logo Blogr"/></a>
         </div>
@@ -51,15 +52,13 @@
         </ul>
       </nav>
       
-      <nav class="menu-right">
-        <ul>
-          <li><a>Login</a></li>
-          <li><a>Sign Up</a></li>
-        </ul>
-      </nav>
+      <div class="menu-right"> <!-- Login and Sign Up -->
+        <a href="#">Login</a>
+        <a href="#"><button class="button-signup">Sign Up</button></a>
+      </div>
     </header>
 
-    <main>
+    <main> <!-- Introduction -->
       <div class="content-main">
         <h1>A modern publishing platform</h1>
         <p>Grow your audience and build your online brand</p>
@@ -67,10 +66,10 @@
       
       <div class="call-to-action">
         <a href="#">
-          <buttom class="start-buttom">Start for Free</buttom>
+          <button class="start-button">Start for Free</button>
         </a>
         <a href="#">
-          <buttom class="learn-buttom">Learn More</buttom>
+          <button class="learn-button">Learn More</button>
         </a>
       </div>
     </main>
