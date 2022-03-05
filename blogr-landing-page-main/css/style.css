@@ -29,10 +29,10 @@
   width: 100vw;
   height: 89vh;
   position: relative;
-  background: linear-gradient(to right, var(--very-light-red), var(--light-red));
+  background-image: url('../images/bg-pattern-intro-desktop.svg'), linear-gradient(135deg, var(--very-light-red), var(--light-red));
   border-radius: 0 0 0 50px;
 }
- 
+/*  
 .blogr::before {
   content: "";
   width: 100%;
@@ -43,7 +43,7 @@
   background: url('../images/bg-pattern-intro-desktop.svg') no-repeat center;
   background-position: left 10%;
 }
-
+ */
 
 
 
