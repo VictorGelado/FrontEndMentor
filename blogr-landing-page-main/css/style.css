@@ -17,7 +17,7 @@
 /* Gradient */
 
 /* Background gradient - Intro/CTA mobile nav: */
---very-light-red: hsl(13, 100%, 72%);
+--very-light-red: hsl(13, 100%, 72%); 
 --light-red-: hsl(353, 100%, 62%);
 
 /* Background gradient - body: */
@@ -27,10 +27,21 @@
 
 .blogr {
   width: 100vw;
-  height: 85vh;
-  background: linear-gradient(var(--very-light-red), var(--light-red));
+  height: 89vh;
+  position: relative;
+  background: linear-gradient(to right, var(--very-light-red), var(--light-red));
   border-radius: 0 0 0 50px;
-  /* background: url('../images/bg-pattern-intro-desktop.svg'); */
+}
+ 
+.blogr::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('../images/bg-pattern-intro-desktop.svg') no-repeat center;
+  background-position: left 10%;
 }
 
 
