@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
 
-:root {
 /* Colors */
-
+:root {
 /* Primary */
 --light-red: hsl(356, 100%, 66%); /* (CTA text): */
 --very-light-red: hsl(355, 100%, 74%); /* (CTA hover background) */
@@ -25,13 +24,71 @@
 --very-dark-desaturated-blue: hsl(237, 23%, 32%);
 }
 
+/* Main content  */
 .blogr {
   width: 100vw;
   height: 89vh;
-  position: relative;
-  background-image: url('../images/bg-pattern-intro-desktop.svg'), linear-gradient(135deg, var(--very-light-red), var(--light-red));
-  border-radius: 0 0 0 50px;
+  border-radius: 0 0 0 100px;
+  background-image: url('../images/bg-pattern-intro-desktop.svg'), linear-gradient(85deg, var(--very-light-red), var(--light-red));
+  background-repeat: no-repeat, no-repeat;
+  background-position: 25% 52%, 0 0;
+  color: #ffffff;
 }
+
+/* Background mobile */
+@media (max-width: 1074px) {
+  .blogr {
+    background-image: url('../images/bg-pattern-intro-mobile.svg'), linear-gradient(85deg, var(--very-light-red), var(--light-red));
+    background-size: 200%, 100%;
+  }
+}
+
+@media (max-width: 537px) {
+  .blogr {
+    background-size: unset;
+  }
+}
+
+@media (max-width: 375px) {
+  .blogr {
+    background-position: 35% 30%, 0 0;
+  }
+}
+
+/* Blogr header */
+.nav-menu {
+  width: 100%;
+  height: 152px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menus {
+  width: 75%;
+  display: flex;
+}
+
+.menu-left > ul{
+  display: flex;
+  align-items: center;
+}
+
+.drop-down {
+  display: none;
+}
+
+
+
+
+
+.attribution {
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 /*  
 .blogr::before {
   content: "";
@@ -44,13 +101,3 @@
   background-position: left 10%;
 }
  */
-
-
-
-
-.attribution {
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
