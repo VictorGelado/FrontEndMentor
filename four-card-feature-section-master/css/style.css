@@ -31,7 +31,8 @@ body {
 }
 
 .wrapper {
-  height: 95vh;
+  min-height: 100vh;
+  height: 55rem;
   background: var(--very-light-gray);
 }
 
@@ -157,7 +158,7 @@ footer {
   width: 100%;
   height: 5%;
   padding: 15px;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   background: #1E212B;
   color: var(--very-light-gray);
 }
