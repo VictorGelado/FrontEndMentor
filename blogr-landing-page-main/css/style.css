@@ -24,6 +24,10 @@
 --very-dark-desaturated-blue: hsl(237, 23%, 32%);
 }
 
+body {
+  font-family: 'Overpass', sans-serif;
+}
+
 /* Main content  */
 .blogr {
   width: 100vw;
@@ -67,15 +71,55 @@
 .menus {
   width: 75%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu-left > ul{
   display: flex;
   align-items: center;
+  list-style-type: none;
+}
+
+.menu-left ul li+li {
+  margin-left: 2.5rem;
+}
+
+.menu-left ul li:not(li:nth-child(1)) {
+  position: relative;
+}
+
+.menu-left ul li:not(li:nth-child(1))::after {
+  content: '';
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../images/icon-arrow-light.svg');
+  background-repeat: no-repeat;
 }
 
 .drop-down {
   display: none;
+}
+
+/* Menu right */
+.menu-right a:first-child {
+  margin-right: 1.5rem;
+}
+
+.menu-right .button-signup{
+  padding: 10px 25px;
+  color: var(--light-red);
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  background: var(--white);
 }
 
 
