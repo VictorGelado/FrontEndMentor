@@ -4,7 +4,7 @@
 :root {
 /* Primary */
 --light-red: hsl(356, 100%, 66%); /* (CTA text): */
---very-light-red: hsl(355, 100%, 74%); /* (CTA hover background) */
+--very-light-red-cta: hsl(355, 100%, 74%); /* (CTA hover background) */
 --very-dark-blue: hsl(208, 49%, 24%); /* (headings) */
 
 /* Neutral */
@@ -16,7 +16,7 @@
 /* Gradient */
 
 /* Background gradient - Intro/CTA mobile nav: */
---very-light-red: hsl(13, 100%, 72%); 
+--very-light-red-gradient: hsl(13, 100%, 72%); 
 --light-red-: hsl(353, 100%, 62%);
 
 /* Background gradient - body: */
@@ -33,7 +33,7 @@ body {
   width: 100vw;
   height: 89vh;
   border-radius: 0 0 0 100px;
-  background-image: url('../images/bg-pattern-intro-desktop.svg'), linear-gradient(85deg, var(--very-light-red), var(--light-red));
+  background-image: url('../images/bg-pattern-intro-desktop.svg'), linear-gradient(85deg, var(--very-light-red-gradient), var(--light-red));
   background-repeat: no-repeat, no-repeat;
   background-position: 25% 52%, 0 0;
   color: #ffffff;
@@ -122,7 +122,73 @@ body {
   background: var(--white);
 }
 
+.menu-right .button-signup:hover{
+  background-color: var(--very-light-red-cta);
+  color: var(--white);
+  transition: .6s ease-out;
+}
 
+
+
+/* Main Blogr */
+main {
+  width: 100%;
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  flex-direction: column;
+  margin-top: 100px;
+  text-align: center;
+}
+
+main .content-main h1 {
+  font-size: 3rem;
+}
+
+main .content-main p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+main .call-to-action {
+  margin-top: 25px;
+} 
+
+main .call-to-action .start-button {
+  padding: 10px 10px;
+  margin-right: 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--white);
+  color: var(--light-red);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+}
+
+main .call-to-action .learn-button {
+  padding: 10px 20px;
+  margin-right: 15px;
+  border: 1px solid var(--white);
+  border-radius: 20px;
+  background-color: var(--white);
+  background-color: transparent;
+  color: var(--white);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+}
+
+main .call-to-action .start-button:hover {
+  background-color: var(--very-light-red-cta);
+  color: var(--white);
+  transition: .6s ease-out;
+}
+
+main .call-to-action .learn-button:hover {
+  background-color: var(--white);
+  color: var(--light-red);
+  transition: .6s ease-out;
+
+}
 
 
 
