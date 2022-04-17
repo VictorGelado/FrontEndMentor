@@ -41,7 +41,8 @@ html, body {
 
 /* Introduction */
 .introduction {
-  width: 500px;
+  width: 90%;
+  max-width: 500px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -67,18 +68,43 @@ html, body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 30px;
+}
+
+.free-days {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: var(--blue);
+  box-shadow: 0 10px 0 rgba(0, 0, 0, .2);
+  font-size: .9rem;
+  color: #ffffff;
+}
+
+.free-days p span {
+  font-weight: 600;
 }
 
 .form-trial form {
+  width: 100%;
+  height: 470px;
+  padding: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 15px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, .2);
 }
 
 .form-trial form input {
-  border: none;
+  border-radius: 2px;
+  border: 1px solid #cecece;
 }
 
 .claim {
