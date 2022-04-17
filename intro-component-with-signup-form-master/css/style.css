@@ -1,5 +1,93 @@
+:root {
+/* Colors */
+
+/* Primary */
+
+--red: hsl(0, 100%, 74%);
+--green: hsl(154, 59%, 51%);
+
+/* Accent */
+
+--blue: hsl(248, 32%, 49%);
+
+/* Neutral */
+
+--dark-blue: hsl(249, 10%, 26%);
+--grayish-blue: hsl(246, 25%, 77%);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* Main */
+.claim-trial {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  background: var(--red) url('../images/bg-intro-desktop.png');
+}
+
+/* Introduction */
+.introduction {
+  width: 500px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  color: #ffffff;
+}
+
+.introduction h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.introduction p {
+  font-weight: 500;
+}
+
+/* Form */
+.form-trial {
+  width: 90%;
+  max-width: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-trial form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-trial form input {
+  border: none;
+}
+
+.claim {
+  border: none;
+}
+
+
+@media (max-width: 345px) {
+  .claim-trial {
+    background: var(--red) url('../images/bg-intro-mobile.png');
+  }
 }

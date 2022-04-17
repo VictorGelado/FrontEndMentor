@@ -5,33 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Intro component with sign up form</title>
 
 </head>
 <body>
 
-  <section class="clain-trial">
-    <article>
+
+  <main class="claim-trial">
+    <article class="introduction">
       <h1>Learn to code by watching others</h1>
       <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable. </p>
     </article>
-    <article>
+
+    <!-- Form -->
+    <article class="form-trial">
       <div>Try it free 7 days then $20/mo. thereafter</div>
-      <form action="">
+      <form>
         <input type="text" required placeholder="First Name">
         <input type="text" required placeholder="Last Name">
         <input type="email" required placeholder="Email Address">
         <input type="password" required placeholder="Password">
-        <button type="submit">Claim your free trial</button>
-        <label>By clicking the button, you are agreeing to our Terms and Services</label>
+        <button type="submit" class="button">Claim your free trial</button>
+        <label>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></label>
       </form>
     </article>
-  </section>
+  </main>
+
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://github.com/VictorGelado" target="_blank">Victor Manoel</a>.
     </p>
   </footer>
 </body>
