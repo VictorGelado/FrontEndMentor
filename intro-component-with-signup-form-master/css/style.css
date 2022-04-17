@@ -119,7 +119,22 @@ html, body {
   font-size: 1rem;
   font-weight: 600;
 }
+/* 
+.form-trial form input:invalid {
+  background-image: url('../images/icon-error.svg');
+  background-repeat: no-repeat;
+  background-position: center right 20px;
+  border: .7px solid var(--red);
+}
 
+.form-trial form input:invalid::placeholder {
+  opacity: 0;
+}
+
+.form-trial form input:invalid:nth-child(3)::placeholder {
+  content: 'afa';
+}
+ */
 .claim {
   width: 85%;
   padding: 25px;
@@ -132,6 +147,10 @@ html, body {
   text-transform: uppercase;
   color: #ffffff;
   cursor: pointer;
+}
+
+.claim:hover {
+  opacity: .6;
 }
 
 .form-trial form label {
@@ -147,8 +166,54 @@ html, body {
 }
 
 
+/* Footer */
+footer {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-blue);
+  color: var(--green);
+}
+
+footer p a {
+  text-decoration: none;
+  color: var(--red);
+}
+
+footer p a:hover {
+  color: var(--grayish-blue);
+}
+
+
+@media (max-width: 1130px) {
+  .claim-trial {
+    height: unset;
+    padding: 85px 0 35px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .introduction h1 {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 345px) {
   .claim-trial {
     background: var(--red) url('../images/bg-intro-mobile.png');
+  }
+  .introduction {
+    align-items: center;
+  }
+  .introduction h1 {
+    font-size: 1.5rem;
+    max-width: 230px;
+  }
+  .introduction p {
+    max-width: 310px;
+  }
+  .free-days p {
+    max-width: 170px;
   }
 }
