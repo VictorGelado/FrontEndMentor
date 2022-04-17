@@ -42,7 +42,7 @@ body {
 /* Background mobile */
 @media (max-width: 1074px) {
   .blogr {
-    background-image: url('../images/bg-pattern-intro-mobile.svg'), linear-gradient(85deg, var(--very-light-red), var(--light-red));
+    background-image: url('../images/bg-pattern-intro-mobile.svg'), linear-gradient(85deg, var(--very-light-red-gradient), var(--light-red));
     background-size: 200%, 100%;
   }
 }
@@ -81,6 +81,10 @@ body {
   list-style-type: none;
 }
 
+.menu-left ul li {
+  cursor: pointer;
+} 
+
 .menu-left ul li+li {
   margin-left: 2.5rem;
 }
@@ -89,7 +93,7 @@ body {
   position: relative;
 }
 
-.menu-left ul li:not(li:nth-child(1))::after {
+.menu-left ul li:not(li:nth-child(1)):not(li>ul>li)::after {
   content: '';
   height: 10px;
   width: 10px;
@@ -105,7 +109,19 @@ body {
 }
 
 .drop-down {
+  width: 170px;
+  height: 148px;
+  position: absolute;
+  top: 45px;
+  border-radius: 10px;
+  background-color: var(--white);
+  color: black;
+  list-style-type: none;
   display: none;
+}
+
+.drop-down.active {
+  display: unset;
 }
 
 /* Menu right */
