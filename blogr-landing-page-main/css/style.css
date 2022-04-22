@@ -85,15 +85,15 @@ body {
   cursor: pointer;
 } 
 
-.menu-left ul li+li {
+.menu-left ul .li-father + .li-father {
   margin-left: 2.5rem;
 }
 
-.menu-left ul li:not(li:nth-child(1)) {
+.menu-left ul .li-father:not(li:nth-child(1)) {
   position: relative;
 }
 
-.menu-left ul li:not(li:nth-child(1)):not(li>ul>li)::after {
+.menu-left ul .li-father:not(.li-father:nth-child(1)):not(li>ul>li)::after {
   content: '';
   height: 10px;
   width: 10px;
@@ -111,13 +111,19 @@ body {
 .drop-down {
   width: 170px;
   height: 148px;
+  padding: 45% 15px 0;
   position: absolute;
   top: 45px;
   border-radius: 10px;
   background-color: var(--white);
+  font-size: .9rem;
   color: black;
   list-style-type: none;
   display: none;
+}
+
+.drop-down li + li {
+  margin-top: 4%;
 }
 
 .drop-down.active {
