@@ -95,7 +95,7 @@ html, body {
 
 .form-trial form {
   width: 100%;
-  height: 470px;
+  /* height: 470px; */
   padding: 40px 0;
   display: flex;
   align-items: center;
@@ -106,8 +106,23 @@ html, body {
   box-shadow: 0 10px 0 rgba(0, 0, 0, .2);
 }
 
-.form-trial form input {
+.form-trial form div {
   width: 85%;
+  display: block;
+  text-align: right;
+}
+
+.form-trial form div .error-input {
+  display: none;
+  font-size: .8rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--red);
+}
+
+.form-trial form div input {
+  width: 100%;
+  display: block;
   padding: 20px 25px;
   border-radius: 2px;
   border: .7px solid var(--blue);
@@ -115,10 +130,11 @@ html, body {
   font-weight: 500;
 }
 
-.form-trial form input::placeholder {
+.form-trial form div input::placeholder {
   font-size: 1rem;
   font-weight: 600;
 }
+
 /* 
 .form-trial form input:invalid {
   background-image: url('../images/icon-error.svg');
@@ -153,13 +169,13 @@ html, body {
   opacity: .6;
 }
 
-.form-trial form label {
+.form-trial form .terms {
   font-size: .7rem;
   font-weight: 600;
   color: var(--grayish-blue);
 }
 
-.form-trial form label a {
+.form-trial form .terms a {
   text-decoration: none;
   color: var(--red);
   font-weight: 700;

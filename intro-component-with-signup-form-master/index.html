@@ -29,12 +29,29 @@
         <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
       </div>
       <form>
-        <input type="text" required placeholder="First Name">
-        <input type="text" required placeholder="Last Name">
-        <input type="email" required placeholder="Email Address">
-        <input type="password" required placeholder="Password">
+        <div class="first-name"> <!-- First name -->
+          <input type="text" required placeholder="First Name" id="first-name-id">
+          <label for="first-name-id" class="error-input">First name cannot be empty</label>
+        </div>
+
+        <div class="last-name"> <!-- Last name -->
+          <input type="text" required placeholder="Last Name" id="last-name">
+          <label for="last-name" class="error-input">Last name cannot be empty</label>
+        </div>
+
+        <div class="email"> <!-- Email -->
+          <input type="email" required placeholder="Email Address" id="email">
+          <label for="email" class="error-input">Looks like this not an email</label>
+        </div>
+
+        <div class="password"> <!-- Password -->
+          <input type="password" required placeholder="Password" id="password">
+          <label for="password" class="error-input">Password cannot be empty</label>
+        </div>
+
         <button type="submit" class="claim">Claim your free trial</button>
-        <label>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></label>
+        
+        <label class="terms">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></label>
       </form>
     </article>
   </main>
@@ -45,5 +62,10 @@
       Coded by <a href="https://github.com/VictorGelado" target="_blank">Victor Manoel</a>.
     </p>
   </footer>
+
+
+
+  <script src="./js/index.js" defer></script>
+
 </body>
 </html>
