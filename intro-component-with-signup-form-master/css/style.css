@@ -124,8 +124,8 @@ html, body {
   width: 100%;
   display: block;
   padding: 20px 25px;
-  border-radius: 2px;
-  border: .7px solid var(--blue);
+  border-radius: 5px;
+  border: 1px solid var(--blue);
   font-size: 1rem;
   font-weight: 500;
 }
@@ -135,22 +135,17 @@ html, body {
   font-weight: 600;
 }
 
-/* 
-.form-trial form input:invalid {
+.form-trial form div input.error {
+  border: 1.6px solid var(--red);
   background-image: url('../images/icon-error.svg');
+  background-position: right 15px center;
   background-repeat: no-repeat;
-  background-position: center right 20px;
-  border: .7px solid var(--red);
 }
 
-.form-trial form input:invalid::placeholder {
-  opacity: 0;
+.form-trial form div input[type="email"].error::placeholder {
+  color: var(--red);
 }
 
-.form-trial form input:invalid:nth-child(3)::placeholder {
-  content: 'afa';
-}
- */
 .claim {
   width: 85%;
   padding: 25px;
