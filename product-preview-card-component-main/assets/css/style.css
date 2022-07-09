@@ -11,6 +11,9 @@
 --very-dark-blue: hsl(212, 21%, 14%);
 --dark-grayish-blue: hsl(228, 12%, 48%);
 --white: hsl(0, 0%, 100%);
+
+/* Personal */
+--red: rgb(249, 86, 79);
 }
 
 /* 
@@ -22,6 +25,16 @@ font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+*::selection {
+  background-color: var(--dark-cyan);
+  color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: unset;
 }
 
 html, body {
@@ -53,7 +66,7 @@ main {
 .product-image {
   width: 50%;
   height: 100%;
-  border-radius: 10px 0 0 10px/
+  border-radius: 10px 0 0 10px;
 }
 
 .product-image img {
@@ -133,11 +146,11 @@ main {
   border-radius: 10px;
   border: none;
   background-color: var(--dark-cyan);
-  
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--white);
   cursor: pointer;
+  transition: all .5s cubic-bezier(.17,.67,.96,-0.02);
 }
 
 .button-add-cart button::before {
@@ -146,6 +159,51 @@ main {
   background-image: url('../images/icon-cart.svg');
   background-repeat: no-repeat;
 }
+
+.button-add-cart button:hover {
+  transform: translateY(-10px);
+}
+
+#move-page {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--dark-cyan);
+  font-size: 2.5rem;
+  color: var(--cream);
+  cursor: pointer;
+  transition: all .5s cubic-bezier(.55,.28,.83,.67);
+}
+
+#move-page:hover {
+  bottom: 25px;
+}
+
+/* Footer */
+footer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--very-dark-blue);
+  color: var(--cream);
+}
+
+footer p a {
+  color: var(--red);
+  transition: all .5s cubic-bezier(.17,.67,.96,-0.02);
+}
+
+footer p a:hover {
+  color: var(--dark-grayish-blue);
+}
+
 
 /* Media queries */
 @media (max-width: 585px) {
