@@ -1,0 +1,163 @@
+:root {
+/* Colors */
+
+--white: hsl(0, 0%, 100%);
+--light-gray: hsl(212, 45%, 89%);
+--grayish-blue: hsl(220, 15%, 55%);
+--dark-blue: hsl(218, 44%, 22%);
+--red: rgb(249, 86, 79);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+html, body {
+  overflow-x: hidden;
+  background-color: var(--light-gray);
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-gray);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 322px;
+  min-height: 502px;
+  padding: 18px 18px 45px 18px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white);
+}
+
+/* Image */
+.img-hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.img-hero img {
+  width: 290px;
+  height: 290px;
+  border-radius: 15px;
+}
+
+/* Content */
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.content h1 {
+  max-width: 260px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+.content p {
+  max-width: 260px;
+  color: var(--grayish-blue);
+}
+
+/* Footer */
+footer {
+  height: 65px;
+  width: 100vw;
+  border-radius: 35px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-blue);
+  text-align: center;
+}
+
+footer p {
+  font-size: 1.1rem;
+  color: var(--light-gray);
+}
+
+footer p a {
+  font-weight: 700;
+  color: var(--red);
+  transition: all .5s cubic-bezier(.22,.12,.43,.81);
+}
+
+footer p a:hover {
+  color: var(--white);
+}
+
+/* Media */
+@media (max-width: 360px) {
+  footer p {
+    font-size: .9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer p {
+  width: 100vw;
+  height: 70px;
+  border-radius: 70px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-blue);
+  font-size: 1.1rem;
+  color: var(--light-gray);
+} */
