@@ -1,0 +1,249 @@
+:root {
+/* Colors */
+
+/* Primary */
+
+--cyan: hsl(179, 62%, 43%);
+--bright-yellow: hsl(71, 73%, 54%);
+
+/* Neutral */
+
+--light-gray: hsl(204, 43%, 93%);
+--grayish-blue: hsl(218, 22%, 67%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+*::selection {
+  background-color: var(--bright-yellow);
+  color: #fff;
+}
+
+html, body {
+  overflow-x: hidden;
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+}
+
+main {
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 40px 30px;
+  background-color: var(--light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 638px;
+  height: 725px;
+  border-radius: 7px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, .1);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.community, .subscription, .why-us {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Community */
+.community {
+  padding: 25px 15px 25px 20px;
+  border-radius: 7px 7px 0 0;
+  background-color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.community h1 {
+  color: var(--cyan);
+}
+
+.community p:nth-child(2) {
+  font-size: 1rem;
+  color: var(--bright-yellow);
+}
+
+.community p:last-child {
+  line-height: 1.7;
+  font-size: .9rem;
+  font-weight: 400;
+  color: var(--grayish-blue);
+}
+
+/* Subscription */
+.subscription {
+  padding: 30px 25px;
+  background-color: var(--cyan);
+  font-size: 1.2rem;
+  color: var(--light-gray);
+}
+
+.subscription p {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.subscription .prices p:first-child  {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--light-gray);
+}  
+
+.subscription .prices p:first-child span {
+  margin-right: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--light-gray);
+}
+
+.subscription .prices p:last-child {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.subscription a .call-to-action {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--bright-yellow);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--light-gray);
+  cursor: pointer;
+}
+
+/* Why Us */
+.why-us {
+  padding: 20px 25px 25px 25px;
+  border-radius: 0 0 7px 7px;
+  background-color: var(--cyan);
+  opacity: .8;
+  font-size: 1.2rem;
+  color: var(--light-gray);
+}
+
+.why-us p {
+  font-weight: 700;
+}
+
+.why-us ul li {
+  list-style: none;
+  font-size: .99rem;
+}
+
+.why-us ul li + li {
+  margin-bottom: 3px;
+}
+
+/* Footer */
+footer {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cyan);
+  font-size: .99rem;
+  text-align: center;
+  color: var(--light-gray);
+}
+
+footer p a {
+  font-weight: 700;
+  color: var(--bright-yellow);
+  transition: all .6s ease-out;
+}
+
+footer p a:hover {
+  color: var(--light-gray);
+}
+
+/* Media */
+@media (min-width: 445px) {
+  .community {
+    padding: 6%;
+  }
+}
+
+@media (min-width: 730px) {
+  .container {
+    height: 482px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  /* Community */
+  .community {
+    display: unset;
+    padding: 50px 80px 50px 40px;
+    border-radius: 10px 10px 0 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 1.3rem;
+  }
+  .community h1 {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+  }
+  .community p:nth-child(2) {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+
+  /* Subscription */
+  .subscription {
+    padding: 35px;
+    border-radius: 0 0 0 10px;
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .subscription p:first-child {
+    font-size: 1.1rem;
+  }
+  .subscription .prices p:first-child {
+    font-size: .9rem;
+  }
+  .subscription .prices p:first-child span {
+    font-size: 1.8rem;
+  }
+  .subscription .prices p:last-child {
+    font-size: 1.04rem;
+  }
+
+  /* Why Us */
+  .why-us {
+    padding: 30px 40px 35px 40px;
+    border-radius: 0 0 10px 0;
+    grid-column: 2;
+  }
+  .why-us p:first-child {
+    font-size: 1.2rem;
+  }
+  .why-us ul li {
+    font-size: .89rem;
+  }
+
+  footer {
+    font-size: 1.3rem;
+  }
+}
