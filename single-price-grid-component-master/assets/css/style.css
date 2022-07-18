@@ -48,7 +48,7 @@ main {
 .container {
   width: 100%;
   max-width: 638px;
-  height: 725px;
+  /* height: 725px; */
   border-radius: 7px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, .1);
   display: grid;
@@ -187,7 +187,7 @@ footer p a:hover {
 
 @media (min-width: 730px) {
   .container {
-    height: 482px;
+    /* height: 482px; */
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr; /* Utilizar porcenteagem: 45% 55% */
   }
