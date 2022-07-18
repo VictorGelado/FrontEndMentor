@@ -189,7 +189,7 @@ footer p a:hover {
   .container {
     height: 482px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; /* Utilizar porcenteagem: 45% 55% */
   }
 
   /* Community */
