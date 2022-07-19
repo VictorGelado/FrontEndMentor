@@ -38,8 +38,8 @@ html, body {
 }
 
 main {
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -47,12 +47,7 @@ main {
 main header {
   width: 100%;
   height: 25px;
-  padding: 36px 94px;
-  margin-bottom: 28px;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0; 
+  padding: 80px 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,7 +57,7 @@ main header .menu-right nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 45px;
 }
 
 main header .menu-right nav ul li {
@@ -70,20 +65,61 @@ main header .menu-right nav ul li {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: .6px;
+  cursor: pointer;
 }
 
 main header .menu-right nav ul .gray-bold, .gray-bold a {
   color: var(--grayish-blue);
 }
 
-
-
-
-main article {
-  padding-top: 660px;
+main header .menu-right nav ul .gray-point {
+  min-width: 5px;
+  min-height: 5px;
+  border-radius: 50%;
+  background-color: var(--grayish-blue);
 }
 
+/* Content */
+.content {
+  height: calc(100vh - 160px); /* 160 is height of header */
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
 
+.content .presentation-to-action {
+  min-width: 50%;
+  padding: 0  0 0 10%;
+}
+
+/* Background image */
+.content .image {
+  width: 50%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  right: -15px;
+  z-index: -3;
+  display: flex;
+  align-items: center;
+}
+
+.content .image::after {
+  content: '';
+  min-height: 50%;
+  min-width: 100%;
+  max-width: 100%;
+  border-bottom-left-radius: 100px;
+  background-color: var(--light-grayish-blue);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -5;
+}
+
+.content .image img {
+  position: relative;
+}
 
 
 .attribution {
