@@ -8,8 +8,14 @@ hamburger[0].addEventListener('click', () => {
 
   /* let right = window.getComputedStyle(navMenu, null).getPropertyValue("right"); */
 
-  const visible = 'opacity: 1; right: 0;';
-  const hidden = 'opacity: 0; right: -450px;';
+  if (navMenu.classList.contains('visible')) {
+    hamburger[0].setAttribute('src', './images/icon-close.svg');
+  } else {
+    hamburger[0].setAttribute('src', './images/icon-hamburger.svg');
+  }
+});
 
-  navMenu.classList.contains('visible')? navMenu.style = visible: navMenu.style = hidden;
+window.addEventListener('resize', () => {
+  navMenu.classList.remove('visible');
+  hamburger[0].setAttribute('src', './images/icon-hamburger.svg');
 });

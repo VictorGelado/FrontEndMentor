@@ -39,7 +39,6 @@ html, body {
 
 main {
   min-width: 100vw;
-  max-width: 1440px;
   position: relative;
 }
 
@@ -64,6 +63,19 @@ main header .menu-right .hamburger {
 
 main header .menu-right nav {
   transition: all .5s ease-in;
+}
+
+main header .menu-right nav.visible {
+  width: 315px;
+  height: 235px;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: #fff;
+  opacity: 1;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  box-shadow: 10px 5px 25px rgba(0, 0, 0, .2);
 }
 
 main header .menu-right nav ul {
@@ -232,14 +244,10 @@ main header .menu-right nav ul .gray-point {
   main header .menu-right nav {
     width: 315px;
     height: 235px;
-    padding: 30px;
-    border-radius: 5px;
-    background-color: #fff;
     opacity: 0;
     position: absolute;
     top: 45px;
     right: -450px;
-    box-shadow: 10px 5px 25px rgba(0, 0, 0, .2);
   }
   main header .menu-right nav ul  {
     height: 100%;
