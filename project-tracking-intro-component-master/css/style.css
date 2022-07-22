@@ -62,6 +62,10 @@ main header .menu-right .hamburger {
   cursor: pointer;
 }
 
+main header .menu-right nav {
+  transition: all .5s ease-in;
+}
+
 main header .menu-right nav ul {
   display: flex;
   justify-content: center;
@@ -228,22 +232,27 @@ main header .menu-right nav ul .gray-point {
   main header .menu-right nav {
     width: 315px;
     height: 235px;
+    padding: 30px;
     border-radius: 5px;
     background-color: #fff;
+    opacity: 0;
     position: absolute;
-    right: 0;
     top: 45px;
-    box-shadow: 5px 5px 25px rgba(0, 0, 0, .5);
+    right: -450px;
+    box-shadow: 10px 5px 25px rgba(0, 0, 0, .2);
   }
   main header .menu-right nav ul  {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    justify-content: space-between;
+    gap: unset;
   }
   main header .menu-right nav ul .gray-point {
-    min-width: 80%;
-    min-height: .4px;
-    max-height: .4px;
+    display: block;
+    min-width: 100%;
+    min-height: .7px;
+    max-height: .7px;
     border-radius: unset;
   }
 }
