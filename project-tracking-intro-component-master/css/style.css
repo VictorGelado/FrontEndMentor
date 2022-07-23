@@ -93,6 +93,10 @@ main header .menu-right nav ul li {
   cursor: pointer;
 }
 
+main header .menu-right nav ul .black-bold a {
+  color: var(--very-dark-blue);
+}
+
 main header .menu-right nav ul .gray-bold, .gray-bold a {
   color: var(--grayish-blue);
 }
@@ -230,7 +234,32 @@ main header .menu-right nav ul .gray-point {
   position: relative;
 }
 
-/* Medias */
+/* Footer */
+footer {
+  height: 50px;
+  width: 100vw;
+  background-color: var(--very-dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--light-grayish-blue);
+}
+
+footer p a {
+  font-weight: 700;
+  color: var(--red);
+  transition: all .5s ease-out;
+}
+
+footer p a:hover {
+  color: var(--light-grayish-blue);
+} 
+
+
+
+/* Media queries */
 @media (max-width: 1144px) {
   .content .presentation-to-action .header h1 {
     font-size: 3.3rem;
