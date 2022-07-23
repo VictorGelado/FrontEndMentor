@@ -74,7 +74,7 @@ main header .menu-right nav.visible {
   opacity: 1;
   position: absolute;
   top: 45px;
-  right: 0;
+  right: 1px;
   box-shadow: 10px 5px 25px rgba(0, 0, 0, .2);
 }
 
@@ -139,7 +139,7 @@ main header .menu-right nav ul .gray-point {
 }
 
 .content .presentation-to-action .header p:first-child span {
-  width: 60px;
+  width: 50px;
   min-height: 20px;
   padding: 5px;
   border-radius: 20px;
@@ -167,10 +167,15 @@ main header .menu-right nav ul .gray-point {
 }
 
 /* Call to action */
+.content .presentation-to-action .call-to-action{
+  width: 100%;
+}
+
 .content .presentation-to-action .call-to-action .demo button {
   height: 42px;
   padding: 5px 25px;
   margin-right: 15px;
+  margin-bottom: 15px;
   border: none;
   border-radius: 5px;
   background-color: var(--red);
@@ -262,5 +267,62 @@ main header .menu-right nav ul .gray-point {
     min-height: .7px;
     max-height: .7px;
     border-radius: unset;
+  }
+}
+
+@media (max-width: 734px) {
+  body, html {
+    font-size: 15px; /* Easy :) */
+  }
+  .content .presentation-to-action .header {
+    margin-bottom: 30px;
+  }
+  .content .presentation-to-action .header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 425px) {
+  main {
+    position: relative;
+  }
+  main header {
+    padding: 55px 8%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  } 
+  .content {
+    height: 100vh;
+    flex-direction: column-reverse;
+  }
+  .content .image {
+    padding: 0 0 0 4%;
+    min-width: 100%;
+    min-height: 50%;
+    max-height: 50%;
+    align-items: flex-end;
+    justify-content: end;
+    position: relative;
+  }
+  .content .image::after {
+    content: '';
+    min-width: 50%;
+    height: 100%;
+    border-radius: 0 0 0 45px;
+    position: unset;
+  }
+  .content .image img {
+    max-height: 60%;
+    min-width: 100%;
+    position: absolute;
+    bottom: 55px;
+    right: -29%;
+  }
+  .content .presentation-to-action {
+    height: 50%;
+    width: 100%;
+    padding: 15px 0 0 8% ;
   }
 }
