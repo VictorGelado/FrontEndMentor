@@ -157,6 +157,7 @@ main header .menu-right nav ul .gray-point {
 .content .presentation-to-action .header h1 {
   font-size: 3.5rem;
   text-transform: uppercase;
+  color: var(--very-dark-blue);
 }
 
 .content .presentation-to-action .header p:last-child {
